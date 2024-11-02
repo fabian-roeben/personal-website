@@ -1,4 +1,6 @@
+import { CustomLink } from "../ui/link"
 import { Mail, Github, Linkedin, FileText } from "lucide-react"
+import Link from "next/link"
 
 interface SocialLinksProps {
   className?: string
@@ -19,38 +21,17 @@ export function SocialLinks({ className }: SocialLinksProps) {
 
       <div className="flex items-center gap-2">
         <Github className="h-4 w-4" />
-        <a 
-          href="https://github.com/fabian-roeben" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-muted-foreground hover:text-red-700 transition-all duration-300"
-        >
-          GitHub
-        </a>
+        <CustomLink href="https://github.com/fabian-roeben">GitHub</CustomLink>
       </div>
 
       <div className="flex items-center gap-2">
         <Linkedin className="h-4 w-4" />
-        <a 
-          href="https://www.linkedin.com/in/fabianroeben" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-muted-foreground hover:text-red-700 transition-all duration-300"
-        >
-          LinkedIn
-        </a>
+        <CustomLink href="https://www.linkedin.com/in/fabianroeben">LinkedIn</CustomLink>
       </div>
 
       <div className="flex items-center gap-2">
         <FileText className="h-4 w-4" />
-        <a 
-          href="/cv.pdf" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-muted-foreground hover:text-red-700 transition-all duration-300"
-        >
-          CV
-        </a>
+        <CustomLink href="/cv.pdf">CV</CustomLink>
       </div>
     </div>
   )
