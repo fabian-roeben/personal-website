@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Metadata, Viewport } from "next";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: {
@@ -33,14 +34,16 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
-  );
+  )
 }

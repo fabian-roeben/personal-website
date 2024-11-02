@@ -1,6 +1,6 @@
 import Link from "next/link"
-import Image from "next/image"
 import { CustomLink } from "../ui/link"
+import { ThemeToggle } from "../ui/theme-toggle"
 
 export function Header() {
   return (
@@ -11,10 +11,11 @@ export function Header() {
             <span className="inline-flex items-center">Fabian Roeben</span>
           </Link>
           <div className="flex gap-6">
-            <Link href="/#research" className="text-muted-foreground hover:text-red-700 duration-300">
+            <Link href="/#research" className="text-muted-foreground hover:text-red-700 duration-300 dark:duration-0">
               Research
             </Link>
             <CustomLink href="/cv.pdf">CV</CustomLink>
+            <ThemeToggle />
           </div>
         </div>
       </nav>
