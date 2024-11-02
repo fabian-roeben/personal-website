@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useAnimate } from "framer-motion";
 
 interface SectionHeaderProps {
   icon: React.ReactNode;
@@ -6,18 +6,31 @@ interface SectionHeaderProps {
 }
 
 export function SectionHeader({ icon, title }: SectionHeaderProps) {
+  const [scope, animate] = useAnimate();
+ 
+  const triggerAnimation = (hovering: boolean) => {
+    animate(scope.current, {
+      scale: hovering ? 1.2 : 1,
+      y: hovering ? -2 : 0
+    }, { type: "spring", stiffness: 400 });
+  };
+
   return (
     <div className="flex items-center gap-2 mb-4">
-      <motion.div
-        whileHover={{ 
-          scale: 1.2,
-          y: -2,
-          transition: { type: "spring", stiffness: 400 }
-        }}
+      <motion.div 
+        ref={scope}
+        onMouseEnter={() => triggerAnimation(true)}
+        onMouseLeave={() => triggerAnimation(false)}
       >
         {icon}
       </motion.div>
-      <h2 className="text-2xl font-bold">{title}</h2>
+      <h2 
+        className="text-2xl font-bold"
+        onMouseEnter={() => triggerAnimation(true)}
+        onMouseLeave={() => triggerAnimation(false)}
+      >
+        {title}
+      </h2>
     </div>
   );
 }

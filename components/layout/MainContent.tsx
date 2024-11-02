@@ -22,8 +22,8 @@ export function MainContent() {
           <div className="space-y-4 text-muted-foreground">
             <p>
               Welcome! I am a Ph.D. Candidate in Economics at the{" "}
-              <CustomLink href="https://wiso.uni-koeln.de/en/">University of Cologne</CustomLink>
-              . My research focuses on [Research Areas].
+              <CustomLink href="https://wiso.uni-koeln.de/en/" className="text-red-700 dark:text-white dark:hover:text-red-700">University of Cologne</CustomLink>
+              {" "} and Associated Member at <CustomLink href="https://econtribute.de/" className="text-red-700 dark:text-white dark:hover:text-red-700">ECONtribute</CustomLink>. My research focuses on [Research Areas].
               I am particularly interested in [Specific Interests].
             </p>
           </div>

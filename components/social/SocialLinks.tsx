@@ -15,7 +15,7 @@ export function SocialLinks({ className }: SocialLinksProps) {
           href="mailto:f.roeben@wiso.uni-koeln.de"
           className="text-muted-foreground hover:text-red-700 transition-all duration-300 dark:duration-0"
         >
-          f.roeben@wiso.uni-koeln.de
+          f.roeben[at]wiso.uni-koeln.de
         </a>
       </div>
 
