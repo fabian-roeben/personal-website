@@ -34,6 +34,24 @@
     --ring: 215 20.2% 65.1%;
 
     --radius: 0.5rem;
+
+    /* --secondary-glow: conic-gradient(
+      from 10deg at 50% 50%,
+      #eb7494 0deg,
+      #ae77b2 55deg,
+      #97b5da 120deg,
+      #0099ca 160deg,
+      transparent 360deg
+    );
+
+    --third-glow: conic-gradient(
+      from 90deg at 50% 50%,
+      #ff8b7e 0deg,
+      #e24e6b 160deg,
+      #7ed2da 120deg,
+      #8bdce0 55deg,
+      transparent 360deg
+    ); */
   }
 
   .dark {
@@ -73,5 +91,41 @@
 @layer base {
   body {
     @apply bg-background text-foreground;
+    /* position: relative; */
   }
+  
+  /* body::before,
+  body::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    opacity: 0.4;
+  }
+
+  body::before {
+    background: var(--third-glow);
+    border-radius: 50%;
+    width: 60vw;
+    height: 60vw;
+    margin-left: -300px;
+    filter: blur(100px);
+    top: calc(50vh - 30vw);
+    left: 50vw;
+    animation: animateBefore 6s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+  }
+
+  body::after {
+    background: var(--secondary-glow);
+    border-radius: 50%;
+    width: 600px;
+    height: 800px;
+    filter: blur(120px);
+    top: calc(50vh - 400px);
+  } */
 }
+
+/* @keyframes animateBefore {
+  0% { transform: translateX(-200px) translateY(-100px); }
+  50% { transform: translateX(200px) translateY(100px); }
+  100% { transform: translateX(-200px) translateY(-100px); }
+} */

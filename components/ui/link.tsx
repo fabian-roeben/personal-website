@@ -12,7 +12,7 @@ export function CustomLink({ href, children, className = "" }: CustomLinkProps) 
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`hover:text-red-700 duration-300 dark:duration-0 ${className}`}
+      className={`hover:text-red-700 duration-300 transition-all ${className}`}
     >
       {children}
     </Link>

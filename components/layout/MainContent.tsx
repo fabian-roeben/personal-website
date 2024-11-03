@@ -22,9 +22,8 @@ export function MainContent() {
           <div className="space-y-4 text-muted-foreground">
             <p>
               Welcome! I am a Ph.D. Candidate in Economics at the{" "}
-              <CustomLink href="https://wiso.uni-koeln.de/en/" className="text-red-700 dark:text-white dark:hover:text-red-700">University of Cologne</CustomLink>
-              {" "} and Associated Member at <CustomLink href="https://econtribute.de/" className="text-red-700 dark:text-white dark:hover:text-red-700">ECONtribute</CustomLink>. My research focuses on [Research Areas].
-              I am particularly interested in [Specific Interests].
+              <CustomLink href="https://wiso.uni-koeln.de/en/">University of Cologne</CustomLink>
+              {" "} and Associated Member at the <CustomLink href="https://econtribute.de/">ECONtribute Cluster of Excellence</CustomLink>. Much of my work leverages machine learning and natural language processing to address key questions in economics and finance. Currently, I am particularly interested in how LLMs (i) might shape media markets and (ii) can be leveraged to learn about narratives in economics.
             </p>
           </div>
         </section>
@@ -36,7 +35,7 @@ export function MainContent() {
           <ul className="list-disc list-inside text-muted-foreground">
             <li>Ph.D. Economics, <em><CustomLink href="https://wiso.uni-koeln.de/en/">University of Cologne</CustomLink></em>, 2025 (expected)</li>
             <li>M.A. Philosophy, <em><CustomLink href="https://www.ucl.ac.uk/philosophy/">University College London</CustomLink></em>, 2020</li>
-            <li>M.Sc. Finance, <em><CustomLink href="https://www.hhs.se/">Stockholm School of Economics</CustomLink></em>, 2019</li>
+            <li>M.Sc. Finance, <em><CustomLink href="https://www.hhs.se/" className="">Stockholm School of Economics</CustomLink></em>, 2019</li>
             <li>B.Sc. International Business, <em><CustomLink href="https://www.maastrichtuniversity.nl/about-um/faculties/school-business-and-economics">Maastricht University</CustomLink></em>, 2017</li>
           </ul>
         </section>
