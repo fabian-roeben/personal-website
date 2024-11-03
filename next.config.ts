@@ -9,7 +9,9 @@ const nextConfig: NextConfig = {
         hostname: 'fabianroeben.com',
       },
     ],
-  }
+    unoptimized: true,
+  },
+  output: 'export',
 };
 
 export default nextConfig;
