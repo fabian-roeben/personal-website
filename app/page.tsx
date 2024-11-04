@@ -30,7 +30,7 @@ export default function Home() {
             <aside className="md:sticky md:top-16 md:self-start">
               <ProfileSection />
             </aside>
-            <MainContent />
+              <MainContent />
           </div>
         </main>
         <Footer />
