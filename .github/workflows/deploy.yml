@@ -11,23 +11,23 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Build Project
       run: |
         npm install
         npm run build
 
-    - name: Deploy via FTPS (with cleanup)
+    - name: Deploy via FTPS
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: ${{ secrets.FTP_PORT }}
-        protocol: ftps                     # Set to ftps instead of sftp
+        protocol: ftps                     # Set protocol to ftps
         local-dir: "out/"
         server-dir: ${{ secrets.FTP_PATH }}
-        dangerous-clean-slate: true        # Enables deletion of old files
+        dangerous-clean-slate: true        # Removes old files before deployment
         exclude: |
           **/*.map
