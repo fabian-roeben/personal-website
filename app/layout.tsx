@@ -18,11 +18,17 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Fabian Roeben | Economics',
-    description: 'Research on artificial intelligence and machine learning applications in economics, focusing on computational methods and economic modeling.',
+    description: 'Ph.D. Candidate in Economics at the University of Cologne researching applications of artificial intelligence and machine learning in economics.',
     url: 'https://fabianroeben.com',
     siteName: 'Fabian Roeben',
     locale: 'en_US',
     type: 'website',
+    images: [{
+      url: '/profile-photo.jpg',
+      width: 1200,
+      height: 1200,
+      alt: 'Fabian Roeben Profile Photo'
+    }]
   }
 };
 
