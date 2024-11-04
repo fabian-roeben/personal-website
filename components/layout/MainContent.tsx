@@ -16,14 +16,14 @@ export function MainContent() {
     };
   
     return (
-      <div className="space-y-8">
+      <div className="space-y-8 mt-6 md:mt-0">
         <section id="about">
           <SectionHeader icon={<MdHome className="h-6 w-6" />} title="About" />
           <div className="space-y-4 text-muted-foreground">
             <p>
               Welcome! I am a Ph.D. Candidate in Economics at the{" "}
-              <CustomLink href="https://wiso.uni-koeln.de/en/">University of Cologne</CustomLink>
-              {" "} and Associated Member at the <CustomLink href="https://econtribute.de/">ECONtribute Cluster of Excellence</CustomLink>. Much of my work leverages machine learning and natural language processing to address key questions in economics and finance. Currently, I am particularly interested in how LLMs (i) might shape media markets and (ii) can be leveraged to learn about narratives in economics.
+              <CustomLink href="https://wiso.uni-koeln.de/en/" className="underline">University of Cologne</CustomLink>
+              {" "} and Associated Member at the <CustomLink href="https://econtribute.de/" className="underline">ECONtribute Cluster of Excellence</CustomLink>. Much of my work leverages machine learning and natural language processing to address key questions in economics and finance. Currently, I am particularly interested in how LLMs (i) might shape media markets and (ii) can be leveraged to learn about narratives in economics.
             </p>
           </div>
         </section>
@@ -75,21 +75,23 @@ export function MainContent() {
                   )}
                   <div className="flex gap-2 mt-0.5">
                     {paper.abstract && (
-                      <button
+                      <motion.button
                         onClick={() => toggleAbstract(index)}
+                        whileTap={{ scale: 0.95 }}
                       >
                         <span className="text-red-700 dark:text-white">[Abstract]</span>
-                      </button>
+                      </motion.button>
                     )}
                     {paper.links?.map((link, i) => (
-                      <a
-                        key={i}
-                        href={link.url}
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
-                        <span className="text-red-700 dark:text-white">[{link.name}]</span>
-                      </a>
+                      <motion.a
+                      key={i}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <span className="text-red-700 dark:text-white">[{link.name}]</span>
+                    </motion.a>
                     ))}
                   </div>
                   <AnimatePresence>

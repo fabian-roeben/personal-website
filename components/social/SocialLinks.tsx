@@ -1,6 +1,6 @@
 import { CustomLink } from "../ui/link"
 import { Mail, Github, Linkedin, FileText } from "lucide-react"
-import Link from "next/link"
+import { FaXTwitter } from "react-icons/fa6";
 
 interface SocialLinksProps {
   className?: string
@@ -27,6 +27,11 @@ export function SocialLinks({ className }: SocialLinksProps) {
       <div className="flex items-center gap-2">
         <Linkedin className="h-4 w-4" />
         <CustomLink href="https://www.linkedin.com/in/fabianroeben">LinkedIn</CustomLink>
+      </div>
+      
+      <div className="flex items-center gap-2">
+        <FaXTwitter className="h-4 w-4" />
+        <CustomLink href="https://x.com/RoebenFabian">X</CustomLink>
       </div>
 
       <div className="flex items-center gap-2">
