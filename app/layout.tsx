@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
     images: [{
-      url: '/profile-photo.jpg',
+      url: 'https://fabianroeben.com/profile-photo.jpg',
       width: 1200,
       height: 1200,
       alt: 'Fabian Roeben Profile Photo'
