@@ -25,8 +25,9 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: ${{ secrets.FTP_PORT }}
+        protocol: sftp
         local-dir: "out/"
         server-dir: ${{ secrets.FTP_PATH }}
-        delete: true    # Enables deletion of old files
+        dangerous-clean-slate: true  # Enables deletion of old files
         exclude: |
           **/*.map
