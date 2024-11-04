@@ -1,4 +1,4 @@
-name: Deploy to Hetzner via SFTP
+name: Deploy to Hetzner via FTPS
 
 on:
   push:
@@ -18,16 +18,16 @@ jobs:
         npm install
         npm run build
 
-    - name: Deploy via SFTP (with cleanup)
+    - name: Deploy via FTPS (with cleanup)
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: ${{ secrets.FTP_PORT }}
-        protocol: sftp
+        protocol: ftps                     # Set to ftps instead of sftp
         local-dir: "out/"
         server-dir: ${{ secrets.FTP_PATH }}
-        dangerous-clean-slate: true  # Enables deletion of old files
+        dangerous-clean-slate: true        # Enables deletion of old files
         exclude: |
           **/*.map
