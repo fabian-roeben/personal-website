@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     icon: "/favicon-32x32.png",
   },
   openGraph: {
-    title: 'AI & Machine Learning Economics Research - Fabian Roeben',
+    title: 'Fabian Roeben | Economics',
     description: 'Research on artificial intelligence and machine learning applications in economics, focusing on computational methods and economic modeling.',
     url: 'https://fabianroeben.com',
     siteName: 'Fabian Roeben',
