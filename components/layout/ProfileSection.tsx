@@ -6,7 +6,7 @@ export function ProfileSection() {
     <div className="flex flex-col items-start text-left md:items-start md:text-left border border-gray-200 dark:border-hidden rounded-lg w-full md:w-[280px] shadow-sm hover:shadow-md">
       <div className="relative w-full aspect-square">
         <Image
-          src="/profile-photo.jpg"
+          src="https://utfs.io/f/Y1PlqwjQNgrhNlGVfXQPqUrzoXGgc5bKaSTF72l4EfC08m1w"
           alt="Profile"
           fill
           sizes="(max-width: 768px) 100vw, 280px"

@@ -23,7 +23,9 @@ export function MainContent() {
             <p>
               Welcome! I am a Ph.D. Candidate in Economics at the{" "}
               <CustomLink href="https://wiso.uni-koeln.de/en/" className="underline">University of Cologne</CustomLink>
-              {" "} and Associated Member at the <CustomLink href="https://econtribute.de/" className="underline">ECONtribute Cluster of Excellence</CustomLink>. Much of my work leverages machine learning and natural language processing to address key questions in economics and finance. Currently, I am particularly interested in how LLMs (i) might shape media markets and (ii) can be leveraged to learn about narratives in economics.
+              {" "} and Associated Member at the <CustomLink href="https://econtribute.de/" className="underline">ECONtribute Cluster of Excellence</CustomLink>. 
+              Much of my work leverages machine learning and natural language processing to address key questions in economics and finance. 
+              Currently, I am interested in how Large Language Models, in particular <CustomLink href="https://www.ibm.com/think/insights/agentic-ai" className="underline">Agentic AI</CustomLink>,  (i) might shape media markets and (ii) can be leveraged to learn about narratives in economics.
             </p>
           </div>
         </section>
