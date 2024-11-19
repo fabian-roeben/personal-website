@@ -16,7 +16,7 @@ export function SectionHeader({ icon, title }: SectionHeaderProps) {
   };
 
   return (
-    <div className="flex items-center gap-2 mb-4">
+    <div className="flex items-center gap-2.5 mb-6">
       <motion.div 
         ref={scope}
         onMouseEnter={() => triggerAnimation(true)}
@@ -25,7 +25,7 @@ export function SectionHeader({ icon, title }: SectionHeaderProps) {
         {icon}
       </motion.div>
       <h2 
-        className="text-2xl font-bold"
+        className="font-serif text-xl md:text-2xl font-bold tracking-tight"
         onMouseEnter={() => triggerAnimation(true)}
         onMouseLeave={() => triggerAnimation(false)}
       >

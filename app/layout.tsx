@@ -1,6 +1,20 @@
 import "./globals.css";
 import { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
+import { Inter, Source_Serif_4 } from "next/font/google";
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ['latin'],
+  variable: '--font-source-serif',
+  display: 'swap',
+  weight: ['400', '600', '700'],
+});
 
 export const metadata: Metadata = {
   title: {
@@ -34,8 +48,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1
+  initialScale: 1
 };
 
 export default function RootLayout({
@@ -44,11 +57,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        <Providers>
-          {children}
-        </Providers>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${sourceSerif.variable}`}>
+      <body className="min-h-screen bg-background text-foreground font-sans">
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

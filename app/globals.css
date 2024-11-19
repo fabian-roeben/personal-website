@@ -1,134 +1,133 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+ 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
-
+    --foreground: 215 50% 13%;
+ 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-
-    --primary: 222.2 47.4% 11.2%;
+    --card-foreground: 215 50% 13%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 50% 13%;
+ 
+    --primary: 215 50% 23%;    /* Deep navy blue */
     --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 100% 50%;
+ 
+    --secondary: 200 30% 96%;  /* Light blue-gray */
+    --secondary-foreground: 215 50% 13%;
+ 
+    --muted: 200 30% 96%;
+    --muted-foreground: 215 25% 25%;
+    
+    --accent-red: 354 75% 25%;     /* More subdued red */
+    --accent-red-foreground: 0 0% 100%;
+ 
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
-    --ring: 215 20.2% 65.1%;
-
-    --radius: 0.5rem;
-
-    /* --secondary-glow: conic-gradient(
-      from 10deg at 50% 50%,
-      #eb7494 0deg,
-      #ae77b2 55deg,
-      #97b5da 120deg,
-      #0099ca 160deg,
-      transparent 360deg
-    );
-
-    --third-glow: conic-gradient(
-      from 90deg at 50% 50%,
-      #ff8b7e 0deg,
-      #e24e6b 160deg,
-      #7ed2da 120deg,
-      #8bdce0 55deg,
-      transparent 360deg
-    ); */
+ 
+    --border: 215 25% 85%;
+    --input: 215 25% 85%;
+    --ring: 215 50% 23%;
+ 
+    --radius: 0.25rem;  /* Slightly more subtle radius */
   }
-
+ 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
-
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
-
-    --popover: 224 71% 4%;
-    --popover-foreground: 215 20.2% 65.1%;
-
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
-
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
-
+    --background: 215 50% 4%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 215 50% 10%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 215 50% 10%;
+    --popover-foreground: 210 40% 98%;
+ 
     --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 1.2%;
-
-    --secondary: 222.2 47.4% 11.2%;
+    --primary-foreground: 215 50% 23%;
+ 
+    --secondary: 215 30% 15%;
     --secondary-foreground: 210 40% 98%;
-
-    --accent: 216 34% 17%;
+ 
+    --muted: 215 30% 15%;
+    --muted-foreground: 215 20% 75%;
+ 
+    --accent: 215 30% 15%;
     --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 63% 31%;
+    
+    --accent-red: 354 75% 80%;    /* Slightly brighter red for dark mode */
+    --accent-red-foreground: 0 0% 100%;
+ 
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
-    --ring: 216 34% 17%;
-
-    --radius: 0.5rem;
+ 
+    --border: 215 30% 25%;
+    --input: 215 30% 25%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }
-
+ 
 @layer base {
   body {
     @apply bg-background text-foreground;
-    /* position: relative; */
-  }
-  
-  /* body::before,
-  body::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    opacity: 0.4;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
-  body::before {
-    background: var(--third-glow);
-    border-radius: 50%;
-    width: 60vw;
-    height: 60vw;
-    margin-left: -300px;
-    filter: blur(100px);
-    top: calc(50vh - 30vw);
-    left: 50vw;
-    animation: animateBefore 6s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+  /* Sophisticated Typography Scale */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+    letter-spacing: -0.02em;
   }
 
-  body::after {
-    background: var(--secondary-glow);
-    border-radius: 50%;
-    width: 600px;
-    height: 800px;
-    filter: blur(120px);
-    top: calc(50vh - 400px);
-  } */
+  h1 {
+    @apply font-serif text-2xl md:text-3xl font-bold tracking-tight;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    @apply font-serif text-xl md:text-2xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply font-serif text-lg md:text-xl font-semibold;
+  }
+
+  h4 {
+    @apply font-serif text-base md:text-lg font-semibold;
+  }
+
+  p, ul, ol {
+    @apply font-sans text-base leading-relaxed;
+  }
+
+  /* Academic-style blockquotes */
+  blockquote {
+    @apply font-serif text-lg md:text-xl italic pl-4 md:pl-6 border-l-4 border-primary/30 my-6 text-muted-foreground;
+  }
+
+  /* Refined link styling */
+  a:not([class]) {
+    @apply text-muted-foreground hover:text-accent-red transition-colors duration-300;
+  }
+
+  /* Academic-style figure captions */
+  figcaption {
+    @apply text-sm text-muted-foreground text-center mt-2;
+  }
+
+  /* Code blocks */
+  pre {
+    @apply font-mono text-sm md:text-base p-4 rounded-lg bg-secondary/50;
+  }
+
+  code {
+    @apply font-mono text-sm px-1.5 py-0.5 rounded bg-secondary/50;
+  }
 }
-
-/* @keyframes animateBefore {
-  0% { transform: translateX(-200px) translateY(-100px); }
-  50% { transform: translateX(200px) translateY(100px); }
-  100% { transform: translateX(-200px) translateY(-100px); }
-} */
 
 html {
   scroll-behavior: smooth;
@@ -136,18 +135,36 @@ html {
 
 /* WebKit (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 3px;
+  background: var(--muted-foreground);
+  border-radius: var(--radius);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--primary);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted-foreground) var(--secondary);
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Selection Style */
+::selection {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
 }

@@ -29,7 +29,7 @@ export function ThemeToggle() {
             initial={{ opacity: 0, rotate: -90 }}
             animate={{ opacity: 1, rotate: 0 }}
             exit={{ opacity: 0, rotate: 90 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
           >
             <Sun className="h-4 w-4" />
           </motion.div>
@@ -39,7 +39,7 @@ export function ThemeToggle() {
             initial={{ opacity: 0, rotate: 90 }}
             animate={{ opacity: 1, rotate: 0 }}
             exit={{ opacity: 0, rotate: -90 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
           >
             <Moon className="h-4 w-4" />
           </motion.div>

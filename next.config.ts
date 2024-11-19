@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'fabianroeben.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'utfs.io'
+      }
     ],
     unoptimized: true,
   },

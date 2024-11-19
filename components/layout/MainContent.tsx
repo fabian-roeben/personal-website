@@ -19,14 +19,14 @@ export function MainContent() {
       <div className="space-y-8 mt-6 md:mt-0">
         <section id="about">
           <SectionHeader icon={<MdHome className="h-6 w-6" />} title="About" />
-          <div className="space-y-4 text-muted-foreground">
-            <p>
+          <div className="space-y-5 text-muted-foreground">
+            <p className="text-base leading-relaxed max-w-prose text-muted-foreground">
               Welcome! I am a Ph.D. Candidate in Economics at the{" "}
-              <CustomLink href="https://wiso.uni-koeln.de/en/" className="underline">University of Cologne</CustomLink>
-              {" "} and Associated Member at the <CustomLink href="https://econtribute.de/" className="underline">ECONtribute Cluster of Excellence</CustomLink>. 
-              Much of my work leverages machine learning and natural language processing to address key questions in economics and finance. 
-              Currently, I am interested in how Large Language Models, in particular <CustomLink href="https://www.ibm.com/think/insights/agentic-ai" className="underline">Agentic AI</CustomLink>,  (i) might shape media markets and (ii) can be leveraged to learn about narratives in economics.
+              <CustomLink className="underline" href="https://wiso.uni-koeln.de/en/">University of Cologne</CustomLink>
+              {" "} and Associated Member at the <CustomLink className="underline" href="https://econtribute.de/">ECONtribute Cluster of Excellence</CustomLink>. 
+              Much of my work leverages machine learning and natural language processing to address key questions in economics and finance. Currently, I am interested in how Large Language Models, in particular <CustomLink className="underline" href="https://www.ibm.com/think/insights/agentic-ai">Agentic AI</CustomLink>, (i) might shape media markets and (ii) can be leveraged to learn about narratives in economics.
             </p>
+
           </div>
         </section>
   
@@ -35,10 +35,10 @@ export function MainContent() {
         <section id="education">
           <SectionHeader icon={<GraduationCap className="h-6 w-6" strokeWidth={2.5} />} title="Education" />
           <ul className="list-disc list-inside text-muted-foreground">
-            <li>Ph.D. Economics, <em><CustomLink href="https://wiso.uni-koeln.de/en/">University of Cologne</CustomLink></em>, 2025 (expected)</li>
-            <li>M.A. Philosophy, <em><CustomLink href="https://www.ucl.ac.uk/philosophy/">University College London</CustomLink></em>, 2020</li>
-            <li>M.Sc. Finance, <em><CustomLink href="https://www.hhs.se/" className="">Stockholm School of Economics</CustomLink></em>, 2019</li>
-            <li>B.Sc. International Business, <em><CustomLink href="https://www.maastrichtuniversity.nl/about-um/faculties/school-business-and-economics">Maastricht University</CustomLink></em>, 2017</li>
+            <li>Ph.D. Economics, <em>University of Cologne</em>, 2025 (expected)</li>
+            <li>M.A. Philosophy, <em>University College London</em>, 2020</li>
+            <li>M.Sc. Finance, <em>Stockholm School of Economics</em>, 2019</li>
+            <li>B.Sc. International Business, <em>Maastricht University</em>, 2017</li>
           </ul>
         </section>
   
@@ -51,7 +51,7 @@ export function MainContent() {
               const authors = paper.authors || [];
               return (
                 <li key={index}>
-                  <h3 className="font-bold">{index + 1}. {paper.title}</h3>
+                  <h4 className="text-muted-foreground">{index + 1}. {paper.title}</h4>
                   {authors.length > 0 && (
                     <p className="text-muted-foreground mt-0.5">
                       (with {authors.map((author, i) => (
@@ -71,7 +71,7 @@ export function MainContent() {
                     </p>
                   )}
                   {paper.citation && (
-                    <p className="mt-0.5">
+                    <p className="text-muted-foreground mt-0.5">
                       <em>{paper.citation}</em>
                     </p>
                   )}
