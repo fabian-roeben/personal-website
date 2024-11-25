@@ -4,45 +4,46 @@ import { useEffect, useRef } from "react"
 import Link from "next/link"
 import { CustomLink } from "../ui/link"
 import { ThemeToggle } from "../ui/theme-toggle"
-import { motion, useAnimation } from "framer-motion"
 
 export function Header() {
-  const controls = useAnimation()
-  const prevScrollY = useRef(0)
+  const headerRef = useRef<HTMLElement>(null)
+  const lastScrollY = useRef(0)
+  const ticking = useRef(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
-
-      if (currentScrollY > prevScrollY.current) {
-        controls.start({
-          top: -100,
-          transition: { duration: 0.7 }
+      if (!ticking.current) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY
+          const scrollDifference = currentScrollY - lastScrollY.current
+          
+          if (headerRef.current) {
+            // Only hide header if we're not at the top and scrolling down
+            if (scrollDifference > 5 && currentScrollY > 100) {
+              headerRef.current.classList.add('header-hidden')
+            } 
+            // Show header when scrolling up or at the top
+            else if (scrollDifference < -5 || currentScrollY < 100) {
+              headerRef.current.classList.remove('header-hidden')
+            }
+          }
+          
+          lastScrollY.current = currentScrollY
+          ticking.current = false
         })
-      } else {
-        controls.start({
-          top: 0,
-          transition: { duration: 0.7 }
-        })
+        ticking.current = true
       }
-
-      prevScrollY.current = currentScrollY
     }
 
-    window.addEventListener("scroll", handleScroll)
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [controls])
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <div className="h-24">
-      <motion.header
-        animate={controls}
-        initial={{ top: 0 }}
-        style={{ position: "fixed", top: 0, width: "calc(100% - 2rem)", maxWidth: "64rem", left: "50%", transform: "translateX(-50%)" }}
-        className="bg-white/80 dark:bg-gray-800/25 backdrop-blur-md shadow-lg dark:shadow-gray-950/80 rounded-xl z-[100] mt-4"
+      <header
+        ref={headerRef}
+        className="fixed w-[calc(100%-2rem)] max-w-[64rem] left-1/2 -translate-x-1/2 bg-white/80 dark:bg-gray-800/25 backdrop-blur-md shadow-lg dark:shadow-gray-950/80 rounded-xl z-[100] mt-4 transition-transform duration-700 ease-in-out"
       >
         <nav className="container px-4 py-4 max-w-6xl">
           <div className="flex items-center justify-between">
@@ -56,14 +57,14 @@ export function Header() {
               >
                 Research
               </Link>
-              <CustomLink href="/cv.pdf" className="text-base">
+              <CustomLink href="/cv_roeben.pdf" className="text-base">
                 CV
               </CustomLink>
               <ThemeToggle />
             </div>
           </div>
         </nav>
-      </motion.header>
+      </header>
     </div>
   )
 }

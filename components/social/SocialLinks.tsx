@@ -36,7 +36,7 @@ export function SocialLinks({ className }: SocialLinksProps) {
 
       <div className="flex items-center gap-2">
         <FileText className="h-4 w-4" />
-        <CustomLink href="/cv.pdf">CV</CustomLink>
+        <CustomLink href="/cv_roeben.pdf">CV</CustomLink>
       </div>
     </div>
   )

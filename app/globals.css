@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 215 50% 13%;
+    --foreground: 215 50% 8%;
  
     --card: 0 0% 100%;
     --card-foreground: 215 50% 13%;
@@ -20,7 +20,7 @@
     --secondary-foreground: 215 50% 13%;
  
     --muted: 200 30% 96%;
-    --muted-foreground: 215 25% 25%;
+    --muted-foreground: 215 25% 10%;
     
     --accent-red: 354 75% 25%;     /* More subdued red */
     --accent-red-foreground: 0 0% 100%;
@@ -52,7 +52,7 @@
     --secondary-foreground: 210 40% 98%;
  
     --muted: 215 30% 15%;
-    --muted-foreground: 215 20% 75%;
+    --muted-foreground: 215 20% 85%;
  
     --accent: 215 30% 15%;
     --accent-foreground: 210 40% 98%;
@@ -127,6 +127,13 @@
   code {
     @apply font-mono text-sm px-1.5 py-0.5 rounded bg-secondary/50;
   }
+}
+
+.header-hidden {
+  transform: translate(-50%, -140%);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 html {
