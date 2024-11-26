@@ -14,7 +14,7 @@ export function ProfileSection() {
           priority={true}
         />
       </div>
-      <div className="p-5">
+      <div className="bg-background rounded-b-xl p-5">
         <h1 className="font-serif text-2xl font-bold tracking-tight">Fabian Roeben</h1>
         <p className="text-base mt-1.5 text-muted-foreground">
           Ph.D. Candidate in Economics at the University of Cologne

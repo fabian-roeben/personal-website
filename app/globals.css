@@ -1,10 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
+@layer utilities {
+  .bg-waves {
+    pointer-events: none;
+    user-select: none;
+    overflow: hidden;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 50vh;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .bg-waves svg {
+    transform-origin: center;
+    animation: wave-float 20s ease-in-out infinite;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes wave-float {
+  0%, 100% {
+    transform: translateY(0) scale(1.5);
+  }
+  50% {
+    transform: translateY(-2%) scale(1.5);
+  }
+}
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 100% / 0.75 ;
     --foreground: 215 50% 8%;
  
     --card: 0 0% 100%;
@@ -36,7 +69,7 @@
   }
  
   .dark {
-    --background: 215 50% 4%;
+    --background: 215 50% 4% / 0.50;
     --foreground: 210 40% 98%;
  
     --card: 215 50% 10%;

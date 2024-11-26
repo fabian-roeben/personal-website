@@ -2,6 +2,7 @@ import "./globals.css";
 import { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
 import { Inter, Source_Serif_4 } from "next/font/google";
+import { WaveBackground } from "@/components/ui/waves-background";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -58,7 +59,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${sourceSerif.variable}`}>
-      <body className="min-h-screen bg-background text-foreground font-sans">
+      <body className="min-h-screen text-foreground font-sans relative">
+        <div className="fixed inset-0 -z-20 bg-background" />
+        <WaveBackground />
         <Providers>{children}</Providers>
       </body>
     </html>
