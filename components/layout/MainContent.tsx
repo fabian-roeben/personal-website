@@ -17,6 +17,8 @@ export function MainContent() {
   
     return (
       <div className="space-y-8 mt-6 md:mt-0">
+
+        {/*About*/}
         <section id="about">
           <SectionHeader icon={<MdHome className="h-6 w-6" />} title="About" />
           <div className="space-y-5 text-muted-foreground">
@@ -30,8 +32,7 @@ export function MainContent() {
           </div>
         </section>
   
-        <div className="border-t border-gray-200" />
-  
+        {/*Education*/}
         <section id="education">
           <SectionHeader icon={<GraduationCap className="h-6 w-6" strokeWidth={2.5} />} title="Education" />
           <ul className="list-disc list-inside text-muted-foreground">
@@ -42,8 +43,7 @@ export function MainContent() {
           </ul>
         </section>
   
-        <div className="border-t border-gray-200" />
-  
+        {/*Research*/}
         <section id="research">
           <SectionHeader icon={<BookText className="h-6 w-6" strokeWidth={2.5} />} title="Research" />
           <ul className="space-y-4">
@@ -70,30 +70,41 @@ export function MainContent() {
                       ))})
                     </p>
                   )}
-                  {paper.citation && (
-                    <p className="text-muted-foreground mt-0.5">
-                      <em>{paper.citation}</em>
-                    </p>
-                  )}
+                  <div className="flex">
+                    {paper.status && (
+                      <p className="text-muted-foreground mt-0.5">
+                        <em>{paper.status}</em>
+                      </p>
+                    )}
+                    {paper.journal && (
+                      <p className="text-muted-foreground mt-0.5">
+                        ,&nbsp;<em>{paper.journal}</em>, {paper.edition}
+                      </p>
+                    )}
+                  </div>
                   <div className="flex gap-2 mt-0.5">
                     {paper.abstract && (
                       <motion.button
                         onClick={() => toggleAbstract(index)}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <span className="text-red-700 dark:text-white">[Abstract]</span>
+                        <span className="text-accent-red hover:text-accent-red-foreground transition-all duration-300">
+                          {openAbstractIndex === index ? "[Abstract -]" : "[Abstract +]"}
+                        </span>
                       </motion.button>
                     )}
                     {paper.links?.map((link, i) => (
                       <motion.a
-                      key={i}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <span className="text-red-700 dark:text-white">[{link.name}]</span>
-                    </motion.a>
+                        key={i}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <span className="text-accent-red hover:text-accent-red-foreground transition-all duration-300">
+                          [{link.name}]
+                        </span>
+                      </motion.a>
                     ))}
                   </div>
                   <AnimatePresence>
@@ -103,7 +114,7 @@ export function MainContent() {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="mt-0.5 overflow-hidden"
+                        className="mt-0.5 overflow-hidden text-muted-foreground"
                       >
                         {paper.abstract}
                       </motion.div>

@@ -55,8 +55,8 @@
     --muted: 200 30% 96%;
     --muted-foreground: 215 25% 10%;
     
-    --accent-red: 354 75% 25%;     /* More subdued red */
-    --accent-red-foreground: 0 0% 100%;
+    --accent-red: 354 75% 25%;     /* Subdued red */
+    --accent-red-foreground: 354 75% 40%;
  
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -85,13 +85,13 @@
     --secondary-foreground: 210 40% 98%;
  
     --muted: 215 30% 15%;
-    --muted-foreground: 215 20% 85%;
+    --muted-foreground: 215 20% 90%;
  
     --accent: 215 30% 15%;
     --accent-foreground: 210 40% 98%;
     
-    --accent-red: 354 75% 80%;    /* Slightly brighter red for dark mode */
-    --accent-red-foreground: 0 0% 100%;
+    --accent-red: 354 75% 80%;
+    --accent-red-foreground: 354 75% 70%;
  
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;

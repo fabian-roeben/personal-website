@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface Author {
   name: string;
   website?: string;
@@ -11,9 +13,9 @@ export interface Link {
 export interface Paper {
   title: string;
   authors?: Author[];
-  citation?: string;
+  status?: string;
   journal?: string;
-  year?: number;
+  edition?: string;
   links?: Link[];
   abstract?: string;
 }
