@@ -2,7 +2,25 @@ import { Header } from "@/components/layout/Header"
 import { ProfileSection } from "@/components/layout/ProfileSection"
 import { MainContent } from "@/components/layout/MainContent"
 import { Footer } from "@/components/layout/Footer"
-import Head from 'next/head';
+
+export const metadata = {
+  title: "Fabian Roeben | Home",
+  description: "Fabian Roeben's personal website showcasing research and academic work.",
+  openGraph: {
+    title: 'Fabian Roeben | Home',
+    description: 'Ph.D. Candidate in Economics at the University of Cologne.',
+    url: 'https://fabianroeben.com',
+    siteName: 'Fabian Roeben',
+    locale: 'en_US',
+    type: 'website',
+    images: [{
+      url: 'https://fabianroeben.com/profile-photo.jpg',
+      width: 1200,
+      height: 1200,
+      alt: 'Fabian Roeben Profile Photo'
+    }]
+  }
+}
 
 export default function Home() {
   const jsonLd = {
@@ -18,26 +36,17 @@ export default function Home() {
   }
 
   return (
-    <>
-      <Head>
-        <script
-          key="json-ld"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </Head>
-      <div className="min-h-screen bg-background">
-        <Header />
-        <main className="container mx-auto px-4 py-4 md:py-6 max-w-6xl">
-          <div className="grid gap-4 md:grid-cols-[300px_1fr] md:gap-6 justify-center max-w-screen-lg mx-auto">
-            <aside className="md:sticky md:top-16 md:self-start">
-              <ProfileSection />
-            </aside>
-            <MainContent />
-          </div>
-        </main>
-        <Footer />
-      </div>
-    </>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main className="container mx-auto px-4 py-4 md:py-6 max-w-6xl">
+        <div className="grid gap-4 md:grid-cols-[300px_1fr] md:gap-6 justify-center max-w-screen-lg mx-auto">
+          <aside className="md:sticky md:top-16 md:self-start">
+            <ProfileSection />
+          </aside>
+          <MainContent />
+        </div>
+      </main>
+      <Footer />
+    </div>
   )
 }
