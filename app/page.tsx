@@ -4,10 +4,10 @@ import { MainContent } from "@/components/layout/MainContent"
 import { Footer } from "@/components/layout/Footer"
 
 export const metadata = {
-  title: "Fabian Roeben | Home",
+  title: "Fabian Roeben | Economics",
   description: "Fabian Roeben's personal website showcasing research and academic work.",
   openGraph: {
-    title: 'Fabian Roeben | Home',
+    title: 'Fabian Roeben | Economics',
     description: 'Ph.D. Candidate in Economics at the University of Cologne.',
     url: 'https://fabianroeben.com',
     siteName: 'Fabian Roeben',
