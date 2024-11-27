@@ -8,7 +8,7 @@ export const papers: Paper[] = [
     // edition: "Vol. 104, Issue 1.",
     abstract: "Using expectations panel data of 11,302 US households, I analyze households' subjective models of macroeconomic outcomes and show that those models differentially affect planned consumption. To do this, I first use cluster analysis to classify households into types based on the interdependence of their expectations of four key macroeconomic variables: inflation, unemployment, interest rates, and stock prices. I find that households can be clustered into five types, of which three can be interpreted meaningfully: the first forms expectations consistent with economic concepts and the second consistent with a simple affective heuristic. The third seems to form expectations in isolation without interrelating variables. Second, I investigate the behavioral relevance of belonging to a type by analyzing the impact of households' inflation expectations on planned consumption. I find that the first and third - consistent with intertemporal substitution - increase planned spending with an increase in inflation expectations. The second - consistent with an income effect or precautionary saving - decreases planned spending. This research has policy implications for monetary and fiscal authorities seeking to influence household consumption patterns through policy measures.",
     links: [
-      { name: "Data", url: "https://www.newyorkfed.org/microeconomics/sce#/" },
+      { name: "Data", url: "https://www.newyorkfed.org/microeconomics/sce#/" }
     ]
   },
   {

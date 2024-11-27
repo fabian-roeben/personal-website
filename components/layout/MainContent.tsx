@@ -87,6 +87,7 @@ export function MainContent() {
                       <motion.button
                         onClick={() => toggleAbstract(index)}
                         whileTap={{ scale: 0.95 }}
+                        className="w-[91px]"
                       >
                         <span className="text-accent-red hover:text-accent-red-foreground transition-all duration-300">
                           {openAbstractIndex === index ? "[Abstract -]" : "[Abstract +]"}

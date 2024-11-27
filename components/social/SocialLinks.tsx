@@ -1,5 +1,5 @@
 import { CustomLink } from "../ui/link"
-import { Mail, Github, Linkedin, FileText } from "lucide-react"
+import { Mail, Github, Linkedin, FileText, FileUser } from "lucide-react"
 import { FaXTwitter } from "react-icons/fa6";
 
 interface SocialLinksProps {
@@ -8,7 +8,9 @@ interface SocialLinksProps {
 
 export function SocialLinks({ className }: SocialLinksProps) {
   return (
-    <div className={`flex flex-col gap-2 ${className}`}>
+    <div className={`flex flex-col gap-3 ${className}`}>
+      
+      {/* Email link */}
       <div className="flex items-center gap-2">
         <Mail className="h-4 w-4" />
         <a 
@@ -19,25 +21,25 @@ export function SocialLinks({ className }: SocialLinksProps) {
         </a>
       </div>
 
-      <div className="flex items-center gap-2">
-        <Github className="h-4 w-4" />
-        <CustomLink href="https://github.com/fabian-roeben">GitHub</CustomLink>
-      </div>
-
-      <div className="flex items-center gap-2">
-        <Linkedin className="h-4 w-4" />
-        <CustomLink href="https://www.linkedin.com/in/fabianroeben">LinkedIn</CustomLink>
-      </div>
-      
-      <div className="flex items-center gap-2">
-        <FaXTwitter className="h-4 w-4" />
-        <CustomLink href="https://x.com/RoebenFabian">X</CustomLink>
-      </div>
-
+      {/* CV link */}
       <div className="flex items-center gap-2">
         <FileText className="h-4 w-4" />
         <CustomLink href="/cv_roeben.pdf">CV</CustomLink>
       </div>
+
+      {/* Social media icons in horizontal layout */}
+      <div className="flex items-center justify-start gap-4">
+        <CustomLink href="https://github.com/fabian-roeben" aria-label="GitHub Profile">
+          <Github className="h-4 w-4" />
+        </CustomLink>
+        <CustomLink href="https://www.linkedin.com/in/fabianroeben" aria-label="LinkedIn Profile">
+          <Linkedin className="h-4 w-4" />
+        </CustomLink>
+        <CustomLink href="https://x.com/RoebenFabian" aria-label="X Profile">
+          <FaXTwitter className="h-4 w-4" />
+        </CustomLink>
+      </div>
+
     </div>
   )
 }
