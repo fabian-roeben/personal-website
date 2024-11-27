@@ -17,7 +17,7 @@ export const papers: Paper[] = [
       { name: "Felix Chopra", website: "https://www.felixchopra.com/" },
       { name: "Ingar Haaland", website: "https://sites.google.com/site/ingarhaaland/" },
       { name: "Chris Roth", website: "https://sites.google.com/site/chrisrotheconomics" },
-      { name: "Vanessa Sticher"},
+      { name: "Vanessa Sticher", website: "https://economics.mit.edu/people/phd-students/vanessa-sticher"},
     ],
     status: "Work in Progress",
     // abstract: "In large-scale experiments, we study people's news consumption on a news platform, TailorMadeTimes, that enables users to customize news articles in terms  of their entertainment, negativity, political perspective, and complexity. As users set their preferences, the website dynamically generates and presents AI-created news content tailored in real time, while holding constant the underlying facts from a credible source. According to our framework, the AI website decreases search and matching frictions for consumers. Our experiments shed light on the demand for and the consequences of AI customization. First, we provide evidence that AI customization significantly increases news consumption. Second, sing rich click data, we characterize how people customize their news in practice. Third, we study the causal effect of AI customization on knowledge acquisition, issue polarization and affective polarization.",
