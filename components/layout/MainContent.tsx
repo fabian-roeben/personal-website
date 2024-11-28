@@ -20,12 +20,12 @@ export function MainContent() {
 
         {/*About*/}
         <section id="about">
-          <SectionHeader icon={<MdHome className="h-6 w-6" />} title="About" />
+          <SectionHeader icon={<MdHome className="h-6 w-6" />} title="about" />
           <div className="space-y-5 text-muted-foreground">
             <p className="text-base leading-relaxed max-w-prose text-muted-foreground">
               Welcome! I am a Ph.D. Candidate in Economics at the{" "}
               <CustomLink className="underline" href="https://wiso.uni-koeln.de/en/">University of Cologne</CustomLink>
-              {" "} and Associated Member at the <CustomLink className="underline" href="https://econtribute.de/">ECONtribute Cluster of Excellence</CustomLink>. 
+              {" "} and affiliated with the <CustomLink className="underline" href="https://econtribute.de/">ECONtribute Cluster of Excellence</CustomLink> and the <CustomLink className="underline" href="https://gateway-unikoeln.de/en/">Gateway Excellence Start-up Center</CustomLink>. 
               Much of my work leverages machine learning and natural language processing to address key questions in economics and finance. Currently, I am interested in how Large Language Models, in particular <CustomLink className="underline" href="https://www.ibm.com/think/insights/agentic-ai">Agentic AI</CustomLink>, (i) might shape media markets and (ii) can be leveraged to learn about narratives in economics.
             </p>
 
@@ -34,7 +34,7 @@ export function MainContent() {
   
         {/*Education*/}
         <section id="education">
-          <SectionHeader icon={<GraduationCap className="h-6 w-6" strokeWidth={2.5} />} title="Education" />
+          <SectionHeader icon={<GraduationCap className="h-6 w-6" strokeWidth={2.5} />} title="education" />
           <ul className="list-disc list-inside text-muted-foreground">
             <li>Ph.D. Economics, <em>University of Cologne</em>, 2025 (expected)</li>
             <li>M.A. Philosophy, <em>University College London</em>, 2020</li>
@@ -45,7 +45,7 @@ export function MainContent() {
   
         {/*Research*/}
         <section id="research">
-          <SectionHeader icon={<BookText className="h-6 w-6" strokeWidth={2.5} />} title="Research" />
+          <SectionHeader icon={<BookText className="h-6 w-6" strokeWidth={2.5} />} title="research" />
           <ul className="space-y-4">
             {papers.map((paper, index) => {
               const authors = paper.authors || [];

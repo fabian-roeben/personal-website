@@ -39,8 +39,8 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="container mx-auto px-4 py-4 md:py-6 max-w-6xl">
-        <div className="grid gap-4 md:grid-cols-[300px_1fr] md:gap-6 justify-center max-w-screen-lg mx-auto">
-          <aside className="md:sticky md:top-16 md:self-start">
+        <div className="grid gap-4 md:grid-cols-[300px_1fr] md:gap-6 justify-center max-w-screen-lg mx-auto relative">
+          <aside className="md:h-[calc(100vh-4rem)]">
             <ProfileSection />
           </aside>
           <MainContent />

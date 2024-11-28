@@ -3,7 +3,7 @@ import { SocialLinks } from "../social/SocialLinks"
 
 export function ProfileSection() {
   return (
-    <div className="flex flex-col items-start text-left md:items-start md:text-left border border-gray-200 rounded-xl w-full md:w-[290px] shadow-sm hover:shadow-md transition-shadow duration-300">
+    <div className="flex flex-col items-start text-left md:items-start md:text-left border border-gray-200 rounded-xl w-full md:w-[290px] shadow-sm hover:shadow-md transition-shadow duration-300 md:fixed">
       <div className="relative w-full aspect-square">
         <Image
           src="https://utfs.io/f/Y1PlqwjQNgrhNlGVfXQPqUrzoXGgc5bKaSTF72l4EfC08m1w"
