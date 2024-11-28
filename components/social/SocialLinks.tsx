@@ -21,14 +21,19 @@ export function SocialLinks({ className }: SocialLinksProps) {
         </a>
       </div>
 
-      {/* CV link */}
-      <div className="flex items-center gap-2">
-        <FileText className="h-4 w-4" />
-        <CustomLink href="/cv_roeben.pdf">CV</CustomLink>
-      </div>
-
-      {/* Social media icons in horizontal layout */}
+      {/* CV link Social media icons */}
       <div className="flex items-center justify-start gap-4">
+
+        {/* CV link */}
+        <div className="flex items-center gap-2">
+          <FileText className="h-4 w-4" />
+          <CustomLink href="/cv_roeben.pdf">CV</CustomLink>
+        </div>
+
+        {/* Divider */}
+        <div className="h-5 w-[1px] bg-border" aria-hidden="true" />
+
+        {/* Social media icons */}
         <CustomLink href="https://github.com/fabian-roeben" aria-label="GitHub Profile">
           <Github className="h-4 w-4" />
         </CustomLink>
