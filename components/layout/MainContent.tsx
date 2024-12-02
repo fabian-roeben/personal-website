@@ -20,7 +20,7 @@ export function MainContent() {
 
         {/*About*/}
         <section id="about">
-          <SectionHeader icon={<MdHome className="h-6 w-6" />} title="about" />
+          <SectionHeader icon={<MdHome className="h-6 w-6" />} title="About" />
           <div className="space-y-5 text-muted-foreground">
             <p className="text-base leading-relaxed max-w-prose text-muted-foreground">
               Welcome! I am a Ph.D. Candidate in Economics at the{" "}
@@ -34,7 +34,7 @@ export function MainContent() {
   
         {/*Education*/}
         <section id="education">
-          <SectionHeader icon={<GraduationCap className="h-6 w-6" strokeWidth={2.5} />} title="education" />
+          <SectionHeader icon={<GraduationCap className="h-6 w-6" strokeWidth={2.5} />} title="Education" />
           <ul className="list-disc list-inside text-muted-foreground">
             <li>Ph.D. Economics, <em>University of Cologne</em>, 2025 (expected)</li>
             <li>M.A. Philosophy, <em>University College London</em>, 2020</li>
@@ -45,7 +45,7 @@ export function MainContent() {
   
         {/*Research*/}
         <section id="research">
-          <SectionHeader icon={<BookText className="h-6 w-6" strokeWidth={2.5} />} title="research" />
+          <SectionHeader icon={<BookText className="h-6 w-6" strokeWidth={2.5} />} title="Research" />
           <ul className="space-y-4">
             {papers.map((paper, index) => {
               const authors = paper.authors || [];

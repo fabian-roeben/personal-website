@@ -1,5 +1,5 @@
 import { CustomLink } from "../ui/link"
-import { Mail, Github, Linkedin, FileText, FileUser } from "lucide-react"
+import { Mail, Github, Linkedin, FileText, MapPin } from "lucide-react"
 import { FaXTwitter } from "react-icons/fa6";
 
 interface SocialLinksProps {
@@ -9,6 +9,12 @@ interface SocialLinksProps {
 export function SocialLinks({ className }: SocialLinksProps) {
   return (
     <div className={`flex flex-col gap-3 ${className}`}>
+
+      {/* Location */}
+      <div className="flex items-center gap-2">
+        <MapPin className="h-4 w-4" />
+        <p className="text-muted-foreground">Cologne, Germany</p>
+      </div>
       
       {/* Email link */}
       <div className="flex items-center gap-2">
