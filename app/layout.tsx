@@ -59,10 +59,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${sourceSerif.variable}`}>
-      <body className="min-h-screen text-foreground font-sans relative">
-        <div className="fixed inset-0 -z-20 bg-background" />
+      <body>
         <WaveBackground />
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   )
