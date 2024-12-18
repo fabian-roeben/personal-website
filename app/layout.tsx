@@ -19,7 +19,7 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Fabian Roeben | Economics',
+    default: 'Fabian Roeben',
     template: '%s | Fabian Roeben'
   },
   description: "Fabian Roeben researches the application of artificial intelligence and machine learning in economics at the University of Cologne, focusing on economic modeling and data-driven insights.",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     icon: "/favicon-32x32.png",
   },
   openGraph: {
-    title: 'Fabian Roeben | Economics',
+    title: 'Fabian Roeben',
     description: 'Ph.D. Candidate in Economics at the University of Cologne researching applications of artificial intelligence and machine learning in economics.',
     url: 'https://fabianroeben.com',
     siteName: 'Fabian Roeben',
