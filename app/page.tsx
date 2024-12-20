@@ -4,7 +4,7 @@ import { MainContent } from "@/components/layout/MainContent"
 import { Footer } from "@/components/layout/Footer"
 
 export const metadata = {
-  title: "Fabian Roeben | Economics",
+  title: "Fabian Roeben",
   description: "Fabian Roeben's personal website showcasing research and academic work.",
   openGraph: {
     title: 'Fabian Roeben | Economics',

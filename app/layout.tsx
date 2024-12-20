@@ -20,7 +20,7 @@ const sourceSerif = Source_Serif_4({
 export const metadata: Metadata = {
   title: {
     default: 'Fabian Roeben',
-    template: '%s | Fabian Roeben'
+    template: '%s'
   },
   description: "Fabian Roeben researches the application of artificial intelligence and machine learning in economics at the University of Cologne, focusing on economic modeling and data-driven insights.",
   keywords: ['AI in Economics', 'Machine Learning Economics', 'Economic Data Science', 'Computational Economics', 'Economic Modeling', 'AI Research'],
