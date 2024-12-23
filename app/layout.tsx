@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     follow: true
   },
   icons: {
-    icon: "/favicon-32x32.png",
+    icon: "/android-chrome-192x192.png",
   },
   openGraph: {
     title: 'Fabian Roeben',
