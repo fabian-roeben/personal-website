@@ -56,7 +56,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        serif: ['var(--font-source-serif)', 'Georgia', 'serif'],
+        serif: ['var(--font-source-serif)', 'Crimson Pro', 'Spectral', 'Georgia', 'serif'],
       },
     },
   },

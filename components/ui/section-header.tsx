@@ -24,8 +24,7 @@ export function SectionHeader({ icon, title }: SectionHeaderProps) {
       >
         {icon}
       </motion.div>
-      <h2 
-        className="font-serif tracking-tight"
+      <h2
         onMouseEnter={() => triggerAnimation(true)}
         onMouseLeave={() => triggerAnimation(false)}
       >

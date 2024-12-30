@@ -15,7 +15,7 @@ export function ProfileSection() {
         />
       </div>
       <div className="bg-background rounded-b-xl p-5">
-        <h1 className="font-serif tracking-tight">Fabian Roeben</h1>
+        <h1>Fabian Roeben</h1>
         <p className="text-base mt-1.5 text-muted-foreground">
           Ph.D. Candidate in Economics at the University of Cologne
         </p>

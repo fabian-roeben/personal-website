@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
-import { Inter, Source_Serif_4 } from "next/font/google";
+import { Inter, Source_Serif_4, Crimson_Pro } from "next/font/google";
 import { WaveBackground } from "@/components/ui/waves-background";
 
 const inter = Inter({
@@ -14,7 +14,7 @@ const sourceSerif = Source_Serif_4({
   subsets: ['latin'],
   variable: '--font-source-serif',
   display: 'swap',
-  weight: ['400', '600', '700'],
+  weight: ['300', '400', '500', '600'],
 });
 
 export const metadata: Metadata = {
