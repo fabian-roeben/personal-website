@@ -112,18 +112,14 @@
     pointer-events: auto;
   }
 
-  /* Sophisticated Typography Scale */
-  h1, h2, h3, h4, h5, h6 {
-    letter-spacing: -0.02em;
-  }
-
   h1 {
-    @apply font-serif text-2xl font-semibold tracking-tight;
-    letter-spacing: -0.02em;
+    @apply font-sans text-3xl font-light tracking-tight;
+    letter-spacing: 0.14em;
   }
 
   h2 {
-    @apply font-serif text-2xl font-semibold tracking-tight;
+    @apply font-sans text-2xl tracking-tight font-light;
+    letter-spacing: 0.08em;
   }
 
   h3 {
@@ -131,11 +127,11 @@
   }
 
   h4 {
-    @apply font-serif text-lg font-semibold;
+    @apply font-sans font-medium;
   }
 
-  p, ul, ol {
-    @apply font-sans text-base leading-relaxed;
+  p, ul, ol, a {
+    @apply font-sans text-base md:text-lg leading-relaxed;
   }
 
   /* Academic-style blockquotes */

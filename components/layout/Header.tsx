@@ -44,22 +44,21 @@ export function Header() {
     <div className="h-24">
       <header
         ref={headerRef}
-        className="fixed w-[calc(100%-2rem)] max-w-[64rem] left-1/2 -translate-x-1/2 bg-white/80 dark:bg-gray-800/25 backdrop-blur-md shadow-lg dark:shadow-gray-950/80 rounded-xl z-[100] mt-4 transition-transform duration-700 ease-in-out"
+        className="fixed w-[calc(100%-2rem)] max-w-screen-xl left-1/2 -translate-x-1/2 bg-white/80 dark:bg-gray-800/25 backdrop-blur-md shadow-lg dark:shadow-gray-950/80 rounded-lg z-[100] mt-4 transition-transform duration-700 ease-in-out"
       >
-        <nav className="container px-4 py-4 max-w-6xl">
+        <nav className="container px-4 py-4 max-w-screen-xl">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-lg font-semibold flex items-center gap-2 md:gap-3">
-              <GraduationCap size={24} />
-              Fabian Roeben
+            <Link href="/" className="flex items-center gap-2 md:gap-3">
+              <GraduationCap size={24} strokeWidth={1.5}/>
             </Link>
             <div className="flex items-center gap-3 md:gap-5">
               <Link
                 href="/#research"
-                className="text-base text-muted-foreground hover:text-accent-red duration-300 dark:duration-0"
+                className="text-muted-foreground hover:text-accent-red duration-300 dark:duration-0"
               >
                 Research
               </Link>
-              <CustomLink href="/cv_roeben.pdf" className="text-base">
+              <CustomLink href="/cv_roeben.pdf">
                 CV
               </CustomLink>
               <ThemeToggle />

@@ -11,17 +11,17 @@ export function SocialLinks({ className }: SocialLinksProps) {
     <div className={`flex flex-col gap-3 ${className}`}>
 
       {/* Location */}
-      <div className="flex items-center gap-2">
-        <MapPin className="h-4 w-4" />
-        <p className="text-muted-foreground">Cologne, Germany</p>
+      <div className="flex items-center gap-3">
+        <MapPin className="h-5 w-5" strokeWidth={1.5}/>
+        <p>University of Cologne</p>
       </div>
       
       {/* Email link */}
-      <div className="flex items-center gap-2">
-        <Mail className="h-4 w-4" />
+      <div className="flex items-center gap-3">
+        <Mail className="h-5 w-5" strokeWidth={1.5} />
         <a 
           href="mailto:f.roeben@wiso.uni-koeln.de"
-          className="text-muted-foreground hover:text-accent-red transition-all duration-300 dark:duration-0"
+          className="hover:text-accent-red transition-all duration-300 dark:duration-0"
         >
           f.roeben[at]wiso.uni-koeln.de
         </a>
@@ -31,8 +31,8 @@ export function SocialLinks({ className }: SocialLinksProps) {
       <div className="flex items-center justify-start gap-4">
 
         {/* CV link */}
-        <div className="flex items-center gap-2">
-          <FileText className="h-4 w-4" />
+        <div className="flex items-center gap-3">
+          <FileText className="h-5 w-5" strokeWidth={1.5}/>
           <CustomLink href="/cv_roeben.pdf">CV</CustomLink>
         </div>
 
@@ -40,15 +40,17 @@ export function SocialLinks({ className }: SocialLinksProps) {
         <div className="h-5 w-[1px] bg-border" aria-hidden="true" />
 
         {/* Social media icons */}
-        <CustomLink href="https://github.com/fabian-roeben" aria-label="GitHub Profile">
-          <Github className="h-4 w-4" />
-        </CustomLink>
-        <CustomLink href="https://www.linkedin.com/in/fabianroeben" aria-label="LinkedIn Profile">
-          <Linkedin className="h-4 w-4" />
-        </CustomLink>
-        <CustomLink href="https://x.com/RoebenFabian" aria-label="X Profile">
-          <FaXTwitter className="h-4 w-4" />
-        </CustomLink>
+        <div className="flex items-center gap-3">
+          <CustomLink href="https://github.com/fabian-roeben" aria-label="GitHub Profile">
+            <Github className="h-5 w-5" strokeWidth={1.5}/>
+          </CustomLink>
+          <CustomLink href="https://www.linkedin.com/in/fabianroeben" aria-label="LinkedIn Profile">
+            <Linkedin className="h-5 w-5" strokeWidth={1.5}/>
+          </CustomLink>
+          <CustomLink href="https://x.com/RoebenFabian" aria-label="X Profile">
+            <FaXTwitter className="h-5 w-5" strokeWidth={1.5}/>
+          </CustomLink>
+        </div>
       </div>
 
     </div>

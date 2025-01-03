@@ -41,7 +41,8 @@ function AuthorList({ authors }: { authors: Author[] }) {
 function ResearchItem({ paper, index, isOpen, onToggle }: ResearchItemProps) {
   return (
     <li>
-      <h4 className="text-muted-foreground backdrop-blur-[1px]">{index + 1}. {paper.title}</h4>
+      {/* <h4 className="text-muted-foreground backdrop-blur-[1px]">{index + 1}. {paper.title}</h4> */}
+      <h4 className="text-muted-foreground backdrop-blur-[1px]">{paper.title}</h4>
       
       {paper.authors && paper.authors.length > 0 && (
         <AuthorList authors={paper.authors} />
@@ -65,7 +66,7 @@ function ResearchItem({ paper, index, isOpen, onToggle }: ResearchItemProps) {
           <motion.button
             onClick={onToggle}
             whileTap={{ scale: 0.95 }}
-            className="w-[91px]"
+            className="w-[91px] md:w-[102px]"
           >
             <span className="text-accent-red hover:text-accent-red-foreground transition-all duration-300 backdrop-blur-[1px]">
               {isOpen ? "[Abstract -]" : "[Abstract +]"}
@@ -107,7 +108,7 @@ function ResearchItem({ paper, index, isOpen, onToggle }: ResearchItemProps) {
 export function Research({ openAbstractIndex, toggleAbstract }: ResearchProps) {
   return (
     <section id="research">
-      <SectionHeader icon={<BookText className="h-6 w-6" strokeWidth={2.5} />} title="Research" />
+      <SectionHeader icon={<BookText className="h-6 w-6" strokeWidth={1.5} />} title="RESEARCH" />
       <ul className="space-y-4">
         {papers.map((paper, index) => (
           <ResearchItem 
