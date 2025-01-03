@@ -36,9 +36,9 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background px-4">
       <Header />
-      <main className="container mx-auto px-4 md:px-0 py-4 md:py-6 max-w-7xl">
+      <main className="container mx-auto py-4 md:py-6 max-w-7xl">
         <div className="grid gap-4 md:grid-cols-[400px_1fr] md:gap-6 justify-center max-w-screen-xl mx-auto relative">
           <aside className="md:h-[calc(100vh-4rem)]">
             <ProfileSection />
