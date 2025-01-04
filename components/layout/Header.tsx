@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react"
 import Link from "next/link"
 import { CustomLink } from "../ui/link"
 import { ThemeToggle } from "../ui/theme-toggle"
-import { GraduationCap } from 'lucide-react';
 
 export function Header() {
   const headerRef = useRef<HTMLElement>(null)
@@ -49,7 +48,7 @@ export function Header() {
         <nav className="container px-4 py-4 max-w-screen-xl">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2 md:gap-3">
-              <GraduationCap size={24} strokeWidth={1.5}/>
+              <span className="font-medium">Fabian Roeben</span>
             </Link>
             <div className="flex items-center gap-3 md:gap-5">
               <Link

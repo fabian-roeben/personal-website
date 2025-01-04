@@ -108,7 +108,7 @@ function ResearchItem({ paper, index, isOpen, onToggle }: ResearchItemProps) {
 export function Research({ openAbstractIndex, toggleAbstract }: ResearchProps) {
   return (
     <section id="research">
-      <SectionHeader icon={<BookText className="h-6 w-6" strokeWidth={1.5} />} title="RESEARCH" />
+      <SectionHeader icon={<BookText size={24} strokeWidth={1.5} className='dark:fill-[#666359] fill-[#F4EBD0]'/>} title="RESEARCH" />
       <ul className="space-y-4">
         {papers.map((paper, index) => (
           <ResearchItem 

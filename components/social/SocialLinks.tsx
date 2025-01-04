@@ -1,5 +1,6 @@
 import { CustomLink } from "../ui/link"
 import { Mail, Github, Linkedin, FileText, MapPin } from "lucide-react"
+import CologneIcon from "../ui/icons/cologne-icon"
 import { FaXTwitter } from "react-icons/fa6";
 
 interface SocialLinksProps {
@@ -12,13 +13,14 @@ export function SocialLinks({ className }: SocialLinksProps) {
 
       {/* Location */}
       <div className="flex items-center gap-3">
-        <MapPin className="h-5 w-5" strokeWidth={1.5}/>
-        <p>University of Cologne</p>
+        {/* <MapPin size={20} strokeWidth={1.5}/> */}
+        <CologneIcon className="w-6 h-6 -ml-0.5 -mt-0.5 fill-black dark:fill-white"/>
+        <CustomLink href="https://wiso.uni-koeln.de/en/">University of Cologne</CustomLink>
       </div>
       
       {/* Email link */}
       <div className="flex items-center gap-3">
-        <Mail className="h-5 w-5" strokeWidth={1.5} />
+        <Mail size={20} strokeWidth={1.5} />
         <a 
           href="mailto:f.roeben@wiso.uni-koeln.de"
           className="hover:text-accent-red transition-all duration-300 dark:duration-0"
@@ -32,7 +34,7 @@ export function SocialLinks({ className }: SocialLinksProps) {
 
         {/* CV link */}
         <div className="flex items-center gap-3">
-          <FileText className="h-5 w-5" strokeWidth={1.5}/>
+          <FileText size={20} strokeWidth={1.5}/>
           <CustomLink href="/cv_roeben.pdf">CV</CustomLink>
         </div>
 
@@ -42,13 +44,13 @@ export function SocialLinks({ className }: SocialLinksProps) {
         {/* Social media icons */}
         <div className="flex items-center gap-3">
           <CustomLink href="https://github.com/fabian-roeben" aria-label="GitHub Profile">
-            <Github className="h-5 w-5" strokeWidth={1.5}/>
+            <Github size={20} strokeWidth={1.5}/>
           </CustomLink>
           <CustomLink href="https://www.linkedin.com/in/fabianroeben" aria-label="LinkedIn Profile">
-            <Linkedin className="h-5 w-5" strokeWidth={1.5}/>
+            <Linkedin size={20} strokeWidth={1.5}/>
           </CustomLink>
           <CustomLink href="https://x.com/RoebenFabian" aria-label="X Profile">
-            <FaXTwitter className="h-5 w-5" strokeWidth={1.5}/>
+            <FaXTwitter size={20} strokeWidth={1.5}/>
           </CustomLink>
         </div>
       </div>
