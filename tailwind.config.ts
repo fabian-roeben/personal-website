@@ -58,6 +58,9 @@ const config: Config = {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         serif: ['var(--font-source-serif)', 'Crimson Pro', 'Spectral', 'Georgia', 'serif'],
       },
+      fontSize: {
+        'lg': '1.1rem'
+      }
     },
   },
 }
