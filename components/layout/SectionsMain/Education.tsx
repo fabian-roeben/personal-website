@@ -14,7 +14,8 @@ export function Education() {
 
   return (
     <section id="education">
-      <SectionHeader icon={<LibraryBig size={24} strokeWidth={1.5} className='dark:fill-[#5f4c3c] fill-[#B08968]'/>} title="EDUCATION" />
+      {/* <SectionHeader icon={<LibraryBig size={24} strokeWidth={1.5} className='dark:fill-[#5f4c3c] fill-[#B08968]'/>} title="EDUCATION" /> */}
+      <SectionHeader title="EDUCATION" />
       <div 
         className="flex"
         onMouseEnter={() => triggerAnimation(true)}
