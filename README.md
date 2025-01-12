@@ -3,99 +3,86 @@ Academic website built with Next.js 15, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- 🌓 Dark/Light mode support
-- 📱 Fully responsive design
-- 🎨 Tailwind CSS styling
-- 🏗️ Built with Next.js static export
-- 🔍 SEO optimized with JSON-LD
-- ⚡ Optimized image handling
-- 🌊 Animated wave background
-- 📱 Mobile-friendly navigation
-- 🎭 Smooth animations with Framer Motion
+- 🎨 Modern Design
+  - Dark/Light mode support
+  - Fully responsive layout
+  - Custom animations
+    - Subtle slide-up animations on mobile
+    - Side-slide animations on desktop
+  - Mobile-friendly navigation
+  
+- 🚀 Performance Optimized
+  - Static site generation
+  - Optimized image handling with next/image
+  - Efficient font loading with next/font
+  - Responsive design patterns
+  
+- 🔍 SEO Ready
+  - Meta tags optimization
+  - JSON-LD structured data
+  - OpenGraph support
 
 ## Tech Stack
 
-- **Next.js 15** - React framework
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **Framer Motion** - Animations
-- **Radix UI** - UI Components
-- **Lucide React** - Icons
-- **next-themes** - Dark mode support
-
-## Getting Started
-
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-2. Run the development server:
-   ```bash
-   npm run dev
-   ```
-
-3. Build for production:
-   ```bash
-   npm run build
-   ```
+- **Framework:** Next.js 15
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Components:** 
+  - Radix UI for core components
+  - Framer Motion for animations
+  - Lucide React for icons
+  - next-themes for dark mode
 
 ## Project Structure
 
-- **app** - Next.js app directory with page components
-- **components** - Reusable React components
-  - **/ui** - Shared UI components
-  - **/layout** - Layout components
-  - **/social** - Social media components
-- **public** - Static assets
-- **lib** - Utility functions and shared code
-- **types** - TypeScript type definitions
-- **data** - Data files and constants
+```
+├── app/              # Next.js app directory
+├── components/       # React components
+│   ├── ui/          # Shared UI components
+│   ├── layout/      # Layout components
+│   └── social/      # Social media components
+├── public/          # Static assets (e.g. PDFs for papers and CV)
+├── lib/             # Utility functions
+├── types/           # TypeScript definitions
+└── data/           # Data files and constants (content for papers)
+```
 
-## Development
+## Getting Started
 
-### TypeScript
-The project uses TypeScript with strict mode enabled. Configuration can be found in `tsconfig.json`.
+```bash
+# Install dependencies
+npm install
 
-### Styling
-- Tailwind CSS with custom theme configuration
-- CSS variables for dynamic theme colors
-- Framer Motion for animations
-- Custom wave background effect
-- Responsive design breakpoints
-- Custom scrollbar styling
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## Development Notes
 
 ### Component Architecture
-- Modular component structure
-- Shared UI components in `/components/ui`
-- Layout components in `/components/layout`
-- Social media components in `/components/social`
 - Type-safe props with TypeScript interfaces
+- Modular component structure
+- Shared UI components for consistency
+- Responsive design implementation
 
-### Browser Support
-- Modern browsers with CSS Grid and CSS Variables support
-- Custom scrollbar styling for WebKit and Firefox
-- Optimized font loading with next/font
-- Responsive images with next/image
+### Styling System
+- Tailwind CSS with custom theming
+- CSS variables for dynamic colors
+- Responsive breakpoints
+- Custom animations
+- Optimized font loading
 
 ## Deployment
 
-The project uses GitHub Actions for automated deployment via FTPS to Hetzner. The deployment workflow is triggered on pushes to the main branch.
-
-### Deployment Process
-1. Builds the project
-2. Generates static files
-3. Uploads via FTPS to Hetzner
+Automated deployment via GitHub Actions:
+1. Triggers on main branch pushes
+2. Builds and generates static files
+3. Deploys to Hetzner via FTPS
 4. Includes 404 page handling
-
-## Performance
-
-- Static site generation for optimal performance
-- Image optimization with next/image
-- Font optimization with next/font
-- Responsive design patterns
-- Efficient bundle splitting
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - See [LICENSE](LICENSE) file for details.

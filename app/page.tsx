@@ -40,10 +40,12 @@ export default function Home() {
       <Header />
       <main className="container mx-auto py-4 md:py-6 max-w-7xl">
         <div className="grid gap-4 md:grid-cols-[400px_1fr] md:gap-6 justify-center max-w-screen-xl mx-auto relative">
-          <aside className="md:h-[calc(100vh-4rem)]">
+          <aside className="animate-slide-up md:animate-slide-left md:h-[calc(100vh-4rem)]">
             <ProfileSection />
           </aside>
-          <MainContent />
+          <div className="animate-slide-up md:animate-slide-right">
+            <MainContent />
+          </div>
         </div>
       </main>
       <Footer />
