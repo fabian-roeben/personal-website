@@ -52,11 +52,12 @@ function ResearchItem({ paper, index, isOpen, onToggle }: ResearchItemProps) {
         {paper.status && (
           <p className="text-muted-foreground mt-0.5 backdrop-blur-[1px]">
             <em>{paper.status}</em>
+            {paper.journal && <>,&nbsp;</>}
           </p>
         )}
         {paper.journal && (
           <p className="text-muted-foreground mt-0.5 backdrop-blur-[1px]">
-            ,&nbsp;<em>{paper.journal}</em>, {paper.edition}
+            <em>{paper.journal}</em>, {paper.edition}
           </p>
         )}
       </div>
