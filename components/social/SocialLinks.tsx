@@ -43,13 +43,13 @@ export function SocialLinks({ className }: SocialLinksProps) {
 
         {/* Social media icons */}
         <div className="flex items-center gap-3">
-          <CustomLink href="https://github.com/fabian-roeben" aria-label="GitHub Profile">
+          <CustomLink href="https://github.com/fabian-roeben" aria-label="GitHub Profile" title="GitHub">
             <Github size={20} strokeWidth={1.5}/>
           </CustomLink>
-          <CustomLink href="https://www.linkedin.com/in/fabianroeben" aria-label="LinkedIn Profile">
+          <CustomLink href="https://www.linkedin.com/in/fabianroeben" aria-label="LinkedIn Profile" title="LinkedIn">
             <Linkedin size={20} strokeWidth={1.5}/>
           </CustomLink>
-          <CustomLink href="https://x.com/RoebenFabian" aria-label="X Profile">
+          <CustomLink href="https://x.com/RoebenFabian" aria-label="X Profile" title="X (formerly Twitter)">
             <FaXTwitter size={20} strokeWidth={1.5}/>
           </CustomLink>
         </div>

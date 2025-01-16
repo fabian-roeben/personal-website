@@ -6,6 +6,7 @@ interface CustomLinkProps {
   children: React.ReactNode;
   className?: string;
   external?: boolean;
+  title?: string;
 }
 
 export function CustomLink({ 
@@ -13,6 +14,7 @@ export function CustomLink({
   children, 
   className,
   external = false,
+  title,
   ...props 
 }: CustomLinkProps) {
   const isExternal = external || href.startsWith('http');
@@ -21,6 +23,7 @@ export function CustomLink({
       href={href}
       target={isExternal ? "_blank" : "_self"}
       rel={isExternal ? "noopener noreferrer" : undefined}
+      title={title}
       className={cn(
         "text-muted-foreground hover:text-accent-red transition-colors duration-300",
         className
