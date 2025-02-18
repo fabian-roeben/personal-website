@@ -23,7 +23,7 @@ export const papers: Paper[] = [
     ]
   },
   {
-    title: "Language Customization and the Market for News",
+    title: "AI Customization and the Market for News",
     authors: [
       { name: "Felix Chopra", website: "https://www.felixchopra.com/" },
       { name: "Ingar Haaland", website: "https://sites.google.com/site/ingarhaaland/" },
