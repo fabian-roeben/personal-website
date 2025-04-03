@@ -4,13 +4,13 @@ import { SocialLinks } from "../social/SocialLinks"
 export function ProfileSection() {
   return (
     <div className="flex flex-col items-start text-left md:items-start md:text-left border border-gray-200 rounded-lg w-full md:w-[380px] shadow-sm hover:shadow-md transition-shadow duration-300 md:fixed">
-      <div className="relative w-full aspect-[9/10]">
+      <div className="relative w-full aspect-[9/10] overflow-hidden">
         <Image
           src="https://utfs.io/f/Y1PlqwjQNgrhNlGVfXQPqUrzoXGgc5bKaSTF72l4EfC08m1w"
           alt="Profile"
           fill
           sizes="(max-width: 768px) 100vw, 380px"
-          className="rounded-t-lg object-cover"
+          className="rounded-t-lg object-cover transition-transform duration-500 ease-in-out hover:scale-105"
           priority={true}
         />
         {/* Overlay text on the photo */}
