@@ -3,6 +3,7 @@ import { useState } from "react";
 import { About } from "./SectionsMain/About";
 import { Education } from "./SectionsMain/Education";
 import { Research } from "./SectionsMain/Research";
+import { Teaching } from "./SectionsMain/Teaching";
 
 export function MainContent() {
   const [openAbstractIndex, setOpenAbstractIndex] = useState<number>(-1);
@@ -19,6 +20,7 @@ export function MainContent() {
         openAbstractIndex={openAbstractIndex} 
         toggleAbstract={toggleAbstract} 
       />
+      <Teaching />
     </div>
   );
 }
