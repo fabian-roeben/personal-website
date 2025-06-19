@@ -67,6 +67,15 @@ export const papers: Paper[] = [
   //     { name: "Matthias Sutter", website: "https://www.mpg.de/11389045/research-collective-goods-sutter"},
   //   ],
   // },
+  // {
+  //   title: "The Algorithmic Architecture of News Consumption",
+  //   authors: [
+  //     { name: "Felix Chopra", website: "https://www.felixchopra.com/" },
+  //     { name: "Ingar Haaland", website: "https://sites.google.com/site/ingarhaaland/" },
+  //     { name: "Chris Roth", website: "https://sites.google.com/site/chrisrotheconomics" },
+  //     { name: "Vanessa Sticher", website: "https://economics.mit.edu/people/phd-students/vanessa-sticher"},
+  //   ],
+  // },
   {
     title: "Unraveling Sovereign Risk: Narrative Evidence from Earnings Calls",
     authors: [
