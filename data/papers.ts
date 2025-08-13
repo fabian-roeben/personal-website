@@ -21,12 +21,6 @@ export const papers: Paper[] = [
       { name: "Data", url: "https://www.newyorkfed.org/microeconomics/sce#/" }
     ]
   },
-  // {
-  //   title: "Beyond the Click: Inverting Online Behavior to Preferences",
-  //   authors: [
-  //     { name: "Vanessa Sticher", website: "https://economics.mit.edu/people/phd-students/vanessa-sticher"},
-  //   ],
-  // },
   {
     title: "News Customization with AI",
     authors: [
@@ -39,15 +33,15 @@ export const papers: Paper[] = [
       { name: "Pre-registration", url: "https://www.socialscienceregistry.org/trials/14561"}
     ]
   },
-  {
-    title: "The Asymmetric Response to Political Spin",
-    authors: [
-      { name: "Felix Chopra", website: "https://www.felixchopra.com/" },
-      { name: "Ingar Haaland", website: "https://sites.google.com/site/ingarhaaland/" },
-      { name: "Chris Roth", website: "https://sites.google.com/site/chrisrotheconomics" },
-      { name: "Vanessa Sticher", website: "https://economics.mit.edu/people/phd-students/vanessa-sticher"},
-    ],
-  },
+  // {
+  //   title: "The Asymmetric Response to Political Spin",
+  //   authors: [
+  //     { name: "Felix Chopra", website: "https://www.felixchopra.com/" },
+  //     { name: "Ingar Haaland", website: "https://sites.google.com/site/ingarhaaland/" },
+  //     { name: "Chris Roth", website: "https://sites.google.com/site/chrisrotheconomics" },
+  //     { name: "Vanessa Sticher", website: "https://economics.mit.edu/people/phd-students/vanessa-sticher"},
+  //   ],
+  // },
   // {
   //   title: "Motivational Interviews at Scale",
   //   authors: [
