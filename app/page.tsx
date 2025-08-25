@@ -3,24 +3,7 @@ import { ProfileSection } from "@/components/layout/ProfileSection"
 import { MainContent } from "@/components/layout/MainContent"
 import { Footer } from "@/components/layout/Footer"
 
-export const metadata = {
-  title: "Fabian Roeben",
-  description: "Fabian Roeben's personal website showcasing research and academic work.",
-  openGraph: {
-    title: 'Fabian Roeben | Economics',
-    description: 'Ph.D. Candidate in Economics at the University of Cologne.',
-    url: 'https://fabianroeben.com',
-    siteName: 'Fabian Roeben',
-    locale: 'en_US',
-    type: 'website',
-    images: [{
-      url: 'https://fabianroeben.com/profile-photo.jpg',
-      width: 1200,
-      height: 1200,
-      alt: 'Fabian Roeben Profile Photo'
-    }]
-  }
-}
+// Page-specific metadata is defined globally in app/layout.tsx to avoid duplication.
 
 export default function Home() {
   const jsonLd = {
@@ -49,6 +32,10 @@ export default function Home() {
         </div>
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </div>
   )
 }
