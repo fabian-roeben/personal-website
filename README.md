@@ -1,37 +1,29 @@
-# Personal Website
-Academic website built with Next.js 15, TypeScript, and Tailwind CSS.
+# Academic Personal Website
 
-## Features
+A personal website template for academics built with Next.js 15, TypeScript, and Tailwind CSS. Designed for researchers who need a clean, professional web presence to showcase their work, publications, and academic profile.
 
-- 🎨 Modern Design
-  - Dark/Light mode support
-  - Fully responsive layout
-  - Custom animations
-    - Subtle slide-up animations on mobile
-    - Side-slide animations on desktop
-  - Mobile-friendly navigation
-  
-- 🚀 Performance Optimized
-  - Static site generation
-  - Optimized image handling with next/image
-  - Efficient font loading with next/font
-  - Responsive design patterns
-  
-- 🔍 SEO Ready
-  - Meta tags optimization
-  - JSON-LD structured data
-  - OpenGraph support
+## Overview
 
-## Tech Stack
+This website template provides a complete solution for academic personal websites with sections for research papers, education background, teaching experience, and professional information. The codebase emphasizes maintainability, performance, and accessibility while providing a modern user experience.
 
-- **Framework:** Next.js 15
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Components:** 
-  - Radix UI for core components
-  - Framer Motion for animations
-  - Lucide React for icons
-  - next-themes for dark mode
+## Key Features
+
+- Responsive design optimized for academic content presentation
+- Dark and light theme support with system preference detection
+- Dynamic research paper management with expandable abstracts
+- SEO optimization with structured data for academic profiles
+- Static site generation for reliable hosting and performance
+- Professional typography suitable for academic contexts
+
+## Technology Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript with strict type checking
+- **Styling:** Tailwind CSS with custom design system
+- **Animation Library:** Framer Motion
+- **Icons:** Lucide React with custom SVG components
+- **Theme Management:** next-themes
+- **Build Target:** Static export for universal hosting compatibility
 
 ## Project Structure
 
@@ -60,28 +52,58 @@ npm run dev
 npm run build
 ```
 
-## Development Notes
+## Content Management
 
-### Component Architecture
-- Type-safe props with TypeScript interfaces
-- Modular component structure
-- Shared UI components for consistency
-- Responsive design implementation
+The website content is managed through structured data files:
 
-### Styling System
-- Tailwind CSS with custom theming
-- CSS variables for dynamic colors
-- Responsive breakpoints
-- Custom animations
-- Optimized font loading
+- **Research Papers:** Defined in `data/papers.ts` with TypeScript interfaces for type safety
+- **Personal Information:** Configured in component files and layout metadata
+- **Theme Colors:** Customizable through CSS variables in `app/globals.css`
+
+### Adding Research Papers
+
+Papers are managed as TypeScript objects with the following structure:
+
+```typescript
+{
+  title: string;
+  authors?: Author[];
+  status?: string;
+  journal?: string;
+  edition?: string;
+  links?: Link[];
+  abstract?: string;
+}
+```
+
+## Architecture Notes
+
+### Component Structure
+- Modular design with clear separation between layout, content, and UI components
+- TypeScript interfaces ensure type safety across the application
+- Reusable components promote consistency and maintainability
+
+### Styling Approach
+- Custom Tailwind CSS configuration with academic-appropriate color palette
+- CSS variables enable dynamic theming between light and dark modes
+- Responsive design uses mobile-first methodology
+
+### Performance Considerations
+- Static site generation eliminates server-side dependencies
+- Optimized image loading with Next.js Image component
+- Minimal JavaScript bundle with tree-shaking for unused code
 
 ## Deployment
 
-Automated deployment via GitHub Actions:
-1. Triggers on main branch pushes
-2. Builds and generates static files
-3. Deploys to Hetzner via FTPS
-4. Includes 404 page handling
+The site is configured for static export and can be deployed to any static hosting service. The included configuration supports:
+
+- GitHub Pages
+- Netlify
+- Vercel
+- Traditional web hosting via FTP/FTPS
+- CDN services
+
+Build the static site with `npm run build` and deploy the generated `out/` directory.
 
 ## License
 
