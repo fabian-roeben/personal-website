@@ -1,110 +1,120 @@
-# Academic Personal Website
+# Academic Personal Website Template
 
 A personal website template for academics built with Next.js 15, TypeScript, and Tailwind CSS. Designed for researchers who need a clean, professional web presence to showcase their work, publications, and academic profile.
 
 ## Overview
 
-This website template provides a complete solution for academic personal websites with sections for research papers, education background, teaching experience, and professional information. The codebase emphasizes maintainability, performance, and accessibility while providing a modern user experience.
+This template provides a complete, easy-to-customize solution for academic personal websites. It includes sections for research papers, education, teaching, and a personal profile. The codebase emphasizes maintainability, performance, and accessibility, all while providing a modern user experience.
 
 ## Key Features
 
-- Responsive design optimized for academic content presentation
-- Dark and light theme support with system preference detection
-- Dynamic research paper management with expandable abstracts
-- SEO optimization with structured data for academic profiles
-- Static site generation for reliable hosting and performance
-- Professional typography suitable for academic contexts
+- **Easy Customization**: All personal data and content sections are managed in central data files.
+- **Responsive Design**: Optimized for all screen sizes, from mobile phones to desktop monitors.
+- **Dark and Light Themes**: Supports both themes and detects user's system preference.
+- **Dynamic Research Section**: Manage publications, working papers, and works in progress with expandable abstracts.
+- **SEO Optimized**: Includes structured data for academic profiles to improve search engine visibility.
+- **High Performance**: Built as a static site for fast loading times and reliable hosting.
 
 ## Technology Stack
 
 - **Framework:** Next.js 15 (App Router)
-- **Language:** TypeScript with strict type checking
-- **Styling:** Tailwind CSS with custom design system
-- **Animation Library:** Framer Motion
-- **Icons:** Lucide React with custom SVG components
-- **Theme Management:** next-themes
-- **Build Target:** Static export for universal hosting compatibility
-
-## Project Structure
-
-```
-├── app/              # Next.js app directory
-├── components/       # React components
-│   ├── ui/          # Shared UI components
-│   ├── layout/      # Layout components
-│   └── social/      # Social media components
-├── public/          # Static assets (e.g. PDFs for papers and CV)
-├── lib/             # Utility functions
-├── types/           # TypeScript definitions
-└── data/           # Data files and constants (content for papers)
-```
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animation:** Framer Motion
+- **Icons:** Lucide React
+- **Theme Management:** `next-themes`
 
 ## Getting Started
 
-```bash
-# Install dependencies
-npm install
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/your-repo-name.git
+    cd your-repo-name
+    ```
 
-# Start development server
-npm run dev
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-# Build for production
-npm run build
-```
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-## Content Management
+## Customization Guide
 
-The website content is managed through structured data files:
+Customizing the template is straightforward. All the content and personal information is managed in the `/data` directory.
 
-- **Research Papers:** Defined in `data/papers.ts` with TypeScript interfaces for type safety
-- **Personal Information:** Configured in component files and layout metadata
-- **Theme Colors:** Customizable through CSS variables in `app/globals.css`
+### 1. Personal Information
 
-### Adding Research Papers
-
-Papers are managed as TypeScript objects with the following structure:
+Edit the `data/siteConfig.ts` file to update your personal details, including your name, job title, and social media links.
 
 ```typescript
-{
-  title: string;
-  authors?: Author[];
-  status?: string;
-  journal?: string;
-  edition?: string;
-  links?: Link[];
-  abstract?: string;
-}
+// data/siteConfig.ts
+export const siteConfig = {
+  name: "Your Name",
+  url: "https://your-website.com",
+  jobTitle: "Your Job Title",
+  location: "Your University",
+  locationLink: "https://your-university-link.com",
+  email: "your.email@university.com",
+  cv: "/your-cv.pdf",
+  socials: {
+    github: "https://github.com/your-username",
+    linkedin: "https://linkedin.com/in/your-profile",
+    twitter: "https://x.com/your-handle",
+  },
+  profileImage: {
+    src: "/path-to-your-image.jpg",
+    alt: "A portrait of Your Name",
+  },
+};
 ```
 
-## Architecture Notes
+### 2. Main Content Sections
 
-### Component Structure
-- Modular design with clear separation between layout, content, and UI components
-- TypeScript interfaces ensure type safety across the application
-- Reusable components promote consistency and maintainability
+The sections on the main page (About, Education, etc.) are defined in `data/mainSections.ts`. You can reorder them by changing their order in the array. 
 
-### Styling Approach
-- Custom Tailwind CSS configuration with academic-appropriate color palette
-- CSS variables enable dynamic theming between light and dark modes
-- Responsive design uses mobile-first methodology
+The content for these sections is managed in `data/content.ts`. Here you can update the text for the "About" section, your educational history, and your teaching experience.
 
-### Performance Considerations
-- Static site generation eliminates server-side dependencies
-- Optimized image loading with Next.js Image component
-- Minimal JavaScript bundle with tree-shaking for unused code
+### 3. Research Papers
+
+Add your publications, working papers, and other research to `data/papers.ts`. You can categorize each paper as "Publications", "Working Papers", or "Selected Work in Progress".
+
+```typescript
+// data/papers.ts
+export const papers: Paper[] = [
+  {
+    title: "Your Paper Title",
+    category: "Working Papers", // or "Publications", "Selected Work in Progress"
+    authors: [{ name: "Co-author Name" }],
+    journal: "Journal of Awesome Research",
+    links: [{ name: "PDF", url: "/papers/your-paper.pdf" }],
+    abstract: "Your abstract here...",
+  },
+];
+```
+Make sure to add any corresponding files (like PDFs) to the `/public/papers/` directory.
+
+### 4. CV
+Replace the `cv_roeben.pdf` file in the `/public` directory with your own CV.
+
+### 5. Styling
+You can customize the color scheme and other design elements in `tailwind.config.ts` and `app/globals.css`.
 
 ## Deployment
 
-The site is configured for static export and can be deployed to any static hosting service. The included configuration supports:
+The site is configured for static export and can be deployed to any static hosting service like Vercel, Netlify, or GitHub Pages.
 
-- GitHub Pages
-- Netlify
-- Vercel
-- Traditional web hosting via FTP/FTPS
-- CDN services
-
-Build the static site with `npm run build` and deploy the generated `out/` directory.
+1.  **Build the static site:**
+    ```bash
+    npm run build
+    ```
+2.  **Deploy:**
+    Deploy the generated `/out` directory to your hosting service of choice.
 
 ## License
 
-MIT License - See [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

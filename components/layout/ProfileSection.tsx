@@ -2,6 +2,7 @@
 import Image from "next/image"
 import { SocialLinks } from "../social/SocialLinks"
 import { useLayoutEffect, useRef, useState } from "react"
+import { siteConfig } from "@/data/siteConfig"
 
 export function ProfileSection() {
   const [loaded, setLoaded] = useState(false)
@@ -20,8 +21,8 @@ export function ProfileSection() {
       <div className="relative w-full aspect-[9/10] overflow-hidden">
         <Image
           ref={imgRef}
-          src="https://utfs.io/f/Y1PlqwjQNgrhNlGVfXQPqUrzoXGgc5bKaSTF72l4EfC08m1w"
-          alt="Portrait of Fabian Roeben"
+          src={siteConfig.profileImage.src}
+          alt={siteConfig.profileImage.alt}
           fill
           sizes="(max-width: 768px) 100vw, 380px"
           placeholder="blur"
@@ -31,9 +32,9 @@ export function ProfileSection() {
           onLoad={() => setLoaded(true)}
         />
         <div className="absolute bottom-0 left-0 right-0 pb-3 pt-10 bg-gradient-to-t from-black/60 via-black/40 to-transparent text-center z-20">
-          <h1 className="text-white">FABIAN ROEBEN</h1>
+          <h1 className="text-white">{siteConfig.name.toUpperCase()}</h1>
           <p className="font-light text-lg text-white">
-            Ph.D. Candidate in Economics
+            {siteConfig.jobTitle}
           </p>
         </div>
       </div>

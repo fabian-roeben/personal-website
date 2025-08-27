@@ -1,9 +1,6 @@
 "use client";
 import { useState } from "react";
-import { About } from "./SectionsMain/About";
-import { Education } from "./SectionsMain/Education";
-import { Research } from "./SectionsMain/Research";
-import { Teaching } from "./SectionsMain/Teaching";
+import { mainSections } from "@/data/mainSections";
 
 export function MainContent() {
   const [openAbstractIndex, setOpenAbstractIndex] = useState<number>(-1);
@@ -14,13 +11,18 @@ export function MainContent() {
 
   return (
     <div className="space-y-8 mt-6 md:mt-0">
-      <About />
-      <Education />
-      <Research 
-        openAbstractIndex={openAbstractIndex} 
-        toggleAbstract={toggleAbstract} 
-      />
-      <Teaching />
+      {mainSections.map(({ id, component: Component }) => {
+        if (id === "research") {
+          return (
+            <Component
+              key={id}
+              openAbstractIndex={openAbstractIndex}
+              toggleAbstract={toggleAbstract}
+            />
+          );
+        }
+        return <Component key={id} />;
+      })}
     </div>
   );
 }

@@ -1,15 +1,16 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
+import { siteConfig } from "@/data/siteConfig";
 
-export const dynamic = 'force-static'
-export const revalidate = 86400 // 24 hours
+export const dynamic = "force-static";
+export const revalidate = 86400; // 24 hours
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://fabianroeben.com',
+      url: siteConfig.url,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 1,
     },
-  ]
+  ];
 }

@@ -1,16 +1,16 @@
-import { FC } from 'react';
-import Link from 'next/link';
+import Link from "next/link";
+import { siteConfig } from "@/data/siteConfig";
 
-const NotFound: FC = () => {
+export default function NotFound() {
   return (
-    <div style={styles.container}>
-      <div style={styles.icon}>
+    <div className="flex flex-col items-center justify-center h-screen text-foreground">
+      <div className="mb-4">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          style={styles.svg}
+          className="w-12 h-12 text-destructive"
         >
           <path
             strokeLinecap="round"
@@ -20,45 +20,15 @@ const NotFound: FC = () => {
           />
         </svg>
       </div>
-      <p style={styles.paragraph}>Sorry, the page you are looking for does not exist.</p>
-      <Link href="/" style={styles.link}>
-        Go back to Fabian Roeben's website
+      <p className="text-xl mb-8">
+        Sorry, the page you are looking for does not exist.
+      </p>
+      <Link
+        href="/"
+        className="text-destructive border border-destructive px-4 py-2 rounded-md transition-colors duration-300 hover:bg-destructive hover:text-destructive-foreground"
+      >
+        Go back to {siteConfig.name}&apos;s website
       </Link>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column' as 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    color: '#333',
-    fontFamily: 'Arial, sans-serif',
-  },
-  icon: {
-    marginBottom: '1rem',
-  },
-  svg: {
-    width: '50px',
-    height: '50px',
-    color: '#b91c1c',
-  },
-  paragraph: {
-    fontSize: '1.25rem',
-    marginBottom: '2rem',
-  },
-  link: {
-    fontSize: '1rem',
-    color: '#b91c1c',
-    textDecoration: 'none',
-    border: '1px solid #b91c1c',
-    padding: '0.5rem 1rem',
-    borderRadius: '5px',
-    transition: 'background-color 0.3s, color 0.3s',
-  },
-};
-
-export default NotFound;
+}

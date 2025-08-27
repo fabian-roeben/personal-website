@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 interface CustomLinkProps {
   href: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   external?: boolean;
   title?: string;
