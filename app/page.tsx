@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header"
 import { ProfileSection } from "@/components/layout/ProfileSection"
 import { MainContent } from "@/components/layout/MainContent"
 import { Footer } from "@/components/layout/Footer"
+import { siteConfig } from "@/data/siteConfig"
 
 // Page-specific metadata is defined globally in app/layout.tsx to avoid duplication.
 
@@ -9,12 +10,13 @@ export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Fabian Roeben",
-    "url": "https://fabianroeben.com",
-    "jobTitle": "PhD Candidate and Researcher in Economics",
+    "name": siteConfig.name,
+    "url": siteConfig.url,
+    "jobTitle": siteConfig.jobTitle,
     "sameAs": [
-      "https://github.com/fabian-roeben",
-      "https://linkedin.com/in/fabianroeben"
+      siteConfig.socials.github,
+      siteConfig.socials.linkedin,
+      siteConfig.socials.twitter,
     ]
   }
 

@@ -28,7 +28,7 @@ export function ProfileSection() {
           blurDataURL="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><rect width='16' height='16' fill='%23c7c7c7'/></svg>"
           className={`rounded-t-lg object-cover ${animate ? "transition-opacity" : ""} transition-transform duration-500 ease-in-out motion-safe:hover:scale-105 ${loaded ? "opacity-100" : "opacity-0"}`}
           priority={true}
-          onLoadingComplete={() => setLoaded(true)}
+          onLoad={() => setLoaded(true)}
         />
         <div className="absolute bottom-0 left-0 right-0 pb-3 pt-10 bg-gradient-to-t from-black/60 via-black/40 to-transparent text-center z-20">
           <h1 className="text-white">FABIAN ROEBEN</h1>

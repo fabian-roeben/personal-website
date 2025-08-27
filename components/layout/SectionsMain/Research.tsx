@@ -41,7 +41,6 @@ function AuthorList({ authors }: { authors: Author[] }) {
 function ResearchItem({ paper, index, isOpen, onToggle }: ResearchItemProps) {
   return (
     <li>
-      {/* <h4 className="text-muted-foreground backdrop-blur-[1px]">{index + 1}. {paper.title}</h4> */}
       <h4 className="text-muted-foreground backdrop-blur-[1px]">{paper.title}</h4>
       
       {paper.authors && paper.authors.length > 0 && (
@@ -107,21 +106,38 @@ function ResearchItem({ paper, index, isOpen, onToggle }: ResearchItemProps) {
 }
 
 export function Research({ openAbstractIndex, toggleAbstract }: ResearchProps) {
-  return (
-    <section id="research">
-      {/* <SectionHeader icon={<BookText size={24} strokeWidth={1.5} className='dark:fill-[#666359] fill-[#F4EBD0]'/>} title="RESEARCH" /> */}
+  const groupedPapers = papers.reduce((acc, paper) => {
+    const category = paper.category;
+    if (!acc[category]) {
+      acc[category] = [];
+    }
+    acc[category].push(paper);
+    return acc;
+  }, {} as Record<Paper['category'], Paper[]>);
+
+  const categoryOrder: Paper['category'][] = ["Working Papers", "Selected Work in Progress", "Publications"];
+
+   return (
+     <section id="research">
       <SectionHeader title="RESEARCH" />
-      <ul className="space-y-4">
-        {papers.map((paper, index) => (
-          <ResearchItem 
-            key={index}
-            paper={paper}
-            index={index}
-            isOpen={openAbstractIndex === index}
-            onToggle={() => toggleAbstract(index)}
-          />
-        ))}
-      </ul>
-    </section>
-  );
-}
+      {categoryOrder.map(category => (
+        groupedPapers[category] && (
+          <div key={category} className='mb-8'>
+            <h3 className="mb-3">{category}</h3>
+            <ul className="space-y-4">
+              {groupedPapers[category].map((paper, index) => (
+                <ResearchItem 
+                  key={index}
+                  paper={paper}
+                  index={papers.indexOf(paper)}
+                  isOpen={openAbstractIndex === papers.indexOf(paper)}
+                  onToggle={() => toggleAbstract(papers.indexOf(paper))}
+                />
+              ))}
+            </ul>
+          </div>
+        )
+      ))}
+     </section>
+   );
+ }
