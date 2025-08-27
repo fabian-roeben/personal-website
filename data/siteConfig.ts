@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Fabian Roeben",
   url: "https://fabianroeben.com",
   description:
-    "Fabian Roeben researches the application of artificial intelligence and machine learning in economics at the University of Cologne, focusing on economic modeling and data-driven insights.",
+    "PhD Candidate in Economics at the University of Cologne",
   keywords: [
     "AI in Economics",
     "Machine Learning Economics",
@@ -11,7 +11,7 @@ export const siteConfig = {
     "Economic Modeling",
     "AI Research",
   ],
-  jobTitle: "PhD Candidate and Researcher in Economics",
+  jobTitle: "PhD Candidate in Economics",
   location: "University of Cologne",
   locationLink: "https://wiso.uni-koeln.de/en/",
   email: "f.roeben@wiso.uni-koeln.de",
@@ -22,13 +22,7 @@ export const siteConfig = {
     twitter: "https://x.com/RoebenFabian",
   },
   profileImage: {
-    src: "https://utfs.io/f/Y1PlqwjQNgrhNlGVfXQPqUrzoXGgc5bKaSTF72l4EfC08m1w",
+    src: "/profile.jpg",
     alt: "Portrait of Fabian Roeben",
-  },
-  ogImage: {
-    url: "https://fabianroeben.com/profile-photo.jpg",
-    width: 1200,
-    height: 1200,
-    alt: "Fabian Roeben Profile Photo",
   },
 };

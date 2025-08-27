@@ -67,11 +67,13 @@ export const siteConfig = {
     twitter: "https://x.com/your-handle",
   },
   profileImage: {
-    src: "/path-to-your-image.jpg",
+    src: "/profile.jpg",
     alt: "A portrait of Your Name",
   },
 };
 ```
+
+To change the profile picture, replace the `profile.jpg` file in the `/public` directory with your own image.
 
 ### 2. Main Content Sections
 

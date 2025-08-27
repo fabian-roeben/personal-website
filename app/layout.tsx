@@ -41,10 +41,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: siteConfig.ogImage.url,
-        width: siteConfig.ogImage.width,
-        height: siteConfig.ogImage.height,
-        alt: siteConfig.ogImage.alt,
+        url: `${siteConfig.url}${siteConfig.profileImage.src}`,
+        width: 1200,
+        height: 1200,
+        alt: siteConfig.profileImage.alt,
       },
     ],
   },
