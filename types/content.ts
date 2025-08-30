@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface EducationItem {
   degree: string;
   institution: string;
@@ -7,3 +9,8 @@ export interface EducationItem {
 }
 
 export type TeachingItem = string;
+
+export interface Affiliations {
+  name: string;
+  url: string;
+}

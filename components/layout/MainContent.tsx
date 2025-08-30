@@ -1,9 +1,13 @@
 "use client";
 import { useState } from "react";
 import { mainSections } from "@/data/mainSections";
+import { papers } from "@/data/papers";
 
 export function MainContent() {
-  const [openAbstractIndex, setOpenAbstractIndex] = useState<number>(-1);
+  const jobMarketPaperIndex = papers.findIndex(
+    (paper) => paper.category === "Job Market Paper"
+  );
+  const [openAbstractIndex, setOpenAbstractIndex] = useState<number>(jobMarketPaperIndex);
 
   const toggleAbstract = (index: number) => {
     setOpenAbstractIndex(currentIndex => currentIndex === index ? -1 : index);

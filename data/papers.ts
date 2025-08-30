@@ -12,6 +12,7 @@ export const papers: Paper[] = [
   {
     title: "News Customization with AI",
     category: "Selected Work in Progress",
+    // abstract: "We study people's news preferences using an AI-powered news app that enables users to customize the language of articles — extent of opinion, entertainment value, sentiment, political perspective, and complexity — through AI rewrites of articles from a high-quality outlet. As users set their preferences, the app dynamically presents AI-generated news content in real time while holding constant the underlying news events. Using rich consumption data, we uncover substantial heterogeneities in language preferences. Customization leads to a better match between the news consumed and stated preferences. Respondents offered customization use it to avoid language they dislike, such as political slant or negative sentiment, in favor of fact-driven language. By contrast, respondents who are not offered customization continue to consume news misaligned with their preferences, leading to lower news satisfaction.",
     authors: [
       { name: "Felix Chopra", website: "https://www.felixchopra.com/" },
       { name: "Ingar Haaland", website: "https://sites.google.com/site/ingarhaaland/" },

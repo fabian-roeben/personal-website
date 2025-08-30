@@ -10,8 +10,9 @@ export const siteConfig = {
     "Computational Economics",
     "Economic Modeling",
     "AI Research",
+    "Behavioral Machine Learning"
   ],
-  jobTitle: "PhD Candidate in Economics",
+  jobTitle: "Ph.D. Candidate in Economics",
   location: "University of Cologne",
   locationLink: "https://wiso.uni-koeln.de/en/",
   email: "f.roeben@wiso.uni-koeln.de",

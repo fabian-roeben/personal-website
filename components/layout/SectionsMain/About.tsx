@@ -23,6 +23,17 @@ export function About() {
             {mainContentData.about}
           </ReactMarkdown>
         </div>
+        <div className="backdrop-blur-[1px]">
+          <p>
+            Affiliations:{" "}
+            {mainContentData.affiliations.map((affiliation, index) => (
+              <span key={affiliation.url}>
+                <CustomLink className="underline" href={affiliation.url}>{affiliation.name}</CustomLink>
+                {index < mainContentData.affiliations.length - 1 ? ", " : ""}
+              </span>
+            ))}
+          </p>
+        </div>
       </div>
     </section>
   );

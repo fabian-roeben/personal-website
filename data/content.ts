@@ -1,8 +1,23 @@
-import { EducationItem, TeachingItem } from "@/types/content";
+import { EducationItem, TeachingItem, Affiliations } from "@/types/content";
 
 const aboutContent = `
-I am a Ph.D. Candidate in Economics at the [University of Cologne](https://wiso.uni-koeln.de/en/) and affiliated with the [ECONtribute Cluster of Excellence](https://econtribute.de/), the [Center for Social and Economic Behavior (C-SEB)](https://c-seb.de/en/), and the [Gateway Excellence Start-up Center](https://gateway-unikoeln.de/en/). I am broadly interested in applied AI - both in adapting AI tools to econmic research and in the economic analysis of AI technologies. Currently, I work on how AI systems (i) shape media markets and (ii) can be leveraged to learn about narratives in economics.
+I am a Ph.D. Candidate in Economics at the [University of Cologne](https://wiso.uni-koeln.de/en/). I am broadly interested in applied AI — both in adapting AI tools to econmic research and in the economic analysis of AI technologies. Currently, I work on how AI systems (i) shape media markets and (ii) can be leveraged to learn about narratives in economics.
 `;
+
+const affiliationsContent: Affiliations[] = [
+  {
+    name: "ECONtribute",
+    url: "https://econtribute.de/",
+  },
+  {
+    name: "C-SEB",
+    url: "https://c-seb.de/en/",
+  },
+  {
+    name: "Gateway Cologne",
+    url: "https://gateway-unikoeln.de/en/",
+  },
+];
 
 const educationContent: EducationItem[] = [
   {
@@ -10,7 +25,7 @@ const educationContent: EducationItem[] = [
     institution: "University of Cologne",
     institutionShort: "U. Cologne",
     url: "https://wiso.uni-koeln.de/en/",
-    year: "2025 (expected)",
+    year: "2026 (expected)",
   },
   {
     degree: "M.A. Philosophy",
@@ -45,4 +60,5 @@ export const mainContentData = {
   about: aboutContent,
   education: educationContent,
   teaching: teachingContent,
+  affiliations: affiliationsContent,
 };

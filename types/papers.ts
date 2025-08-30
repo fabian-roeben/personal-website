@@ -12,7 +12,7 @@ export interface Link {
 
 export interface Paper {
   title: string;
-  category: "Selected Work in Progress" | "Working Papers" | "Publications";
+  category: "Selected Work in Progress" | "Working Papers" | "Publications" | "Job Market Paper";
   authors?: Author[];
   status?: string;
   journal?: string;

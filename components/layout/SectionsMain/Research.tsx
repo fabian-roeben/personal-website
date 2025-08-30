@@ -39,9 +39,16 @@ function AuthorList({ authors }: { authors: Author[] }) {
 }
 
 function ResearchItem({ paper, index, isOpen, onToggle }: ResearchItemProps) {
+  const pdfLink = paper.links?.find((link) => link.name === "PDF");
   return (
     <li>
-      <h4 className="text-muted-foreground backdrop-blur-[1px]">{paper.title}</h4>
+      <h4 className="text-muted-foreground backdrop-blur-[1px]">
+        {pdfLink ? (
+          <CustomLink href={pdfLink.url}>{paper.title}</CustomLink>
+        ) : (
+          paper.title
+        )}
+      </h4>
       
       {paper.authors && paper.authors.length > 0 && (
         <AuthorList authors={paper.authors} />
@@ -115,15 +122,15 @@ export function Research({ openAbstractIndex, toggleAbstract }: ResearchProps) {
     return acc;
   }, {} as Record<Paper['category'], Paper[]>);
 
-  const categoryOrder: Paper['category'][] = ["Working Papers", "Selected Work in Progress", "Publications"];
+  const categoryOrder: Paper['category'][] = ["Job Market Paper", "Working Papers", "Selected Work in Progress", "Publications"];
 
    return (
      <section id="research">
       <SectionHeader title="RESEARCH" />
       {categoryOrder.map(category => (
         groupedPapers[category] && (
-          <div key={category} className='mb-8'>
-            <h3 className="mb-3">{category}</h3>
+          <div key={category} className='mb-4'>
+            <h3 className="mb-2">{category}</h3>
             <ul className="space-y-4">
               {groupedPapers[category].map((paper, index) => (
                 <ResearchItem 
