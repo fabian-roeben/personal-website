@@ -33,14 +33,8 @@ export function Education() {
           {mainContentData.education.map((edu, index) => (
             <li key={index}>
               {edu.degree},{" "}
-              <span className="md:hidden">
-                <CustomLink href={edu.url}>{edu.institutionShort}</CustomLink>,{" "}
-                {edu.year}
-              </span>
-              <span className="hidden md:inline">
-                <CustomLink href={edu.url}>{edu.institution}</CustomLink>,{" "}
-                {edu.year}
-              </span>
+              <CustomLink href={edu.url}>{edu.institution}</CustomLink>,{" "}
+              {edu.year}
             </li>
           ))}
         </ul>

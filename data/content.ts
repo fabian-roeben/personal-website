@@ -23,28 +23,24 @@ const educationContent: EducationItem[] = [
   {
     degree: "Ph.D. Economics",
     institution: "University of Cologne",
-    institutionShort: "U. Cologne",
     url: "https://wiso.uni-koeln.de/en/",
     year: "2026 (expected)",
   },
   {
     degree: "M.A. Philosophy",
     institution: "University College London",
-    institutionShort: "UCL",
     url: "https://www.ucl.ac.uk/philosophy/",
     year: "2020",
   },
   {
     degree: "M.Sc. Finance",
     institution: "Stockholm School of Economics",
-    institutionShort: "SSE",
     url: "https://www.hhs.se",
     year: "2019",
   },
   {
     degree: "B.Sc. International Business",
     institution: "Maastricht University",
-    institutionShort: "U. Maastricht",
     url: "https://www.maastrichtuniversity.nl/about-um/faculties/school-business-and-economics",
     year: "2017",
   },
