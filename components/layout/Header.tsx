@@ -39,6 +39,15 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+    window.history.replaceState(null, "", "/")
+  }
+
   return (
     <div className="h-24">
       <header
@@ -47,7 +56,11 @@ export function Header() {
       >
         <nav className="container px-4 py-4 max-w-screen-xl">
           <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2 md:gap-3">
+            <Link
+              href="/"
+              onClick={handleScrollToTop}
+              className="flex items-center gap-2 md:gap-3"
+            >
               <span className="font-medium">Fabian Roeben</span>
             </Link>
             <div className="flex items-center gap-3 md:gap-5">
