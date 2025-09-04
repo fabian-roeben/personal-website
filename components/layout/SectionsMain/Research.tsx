@@ -19,8 +19,8 @@ interface ResearchItemProps {
 
 function AuthorList({ authors }: { authors: Author[] }) {
   return (
-    <p className="text-muted-foreground mt-0.5 backdrop-blur-[1px]">
-      (with {authors.map((author, i) => (
+    <span className="font-normal">
+      {' '}(with {authors.map((author, i) => (
         <span key={i}>
           {author.website ? (
             <CustomLink href={author.website}>{author.name}</CustomLink>
@@ -34,7 +34,7 @@ function AuthorList({ authors }: { authors: Author[] }) {
             : ""}
         </span>
       ))})
-    </p>
+    </span>
   );
 }
 
@@ -48,11 +48,10 @@ function ResearchItem({ paper, index, isOpen, onToggle }: ResearchItemProps) {
         ) : (
           paper.title
         )}
+        {paper.authors && paper.authors.length > 0 && (
+          <AuthorList authors={paper.authors} />
+        )}
       </h4>
-      
-      {paper.authors && paper.authors.length > 0 && (
-        <AuthorList authors={paper.authors} />
-      )}
 
       <div className="flex">
         {paper.status && (
@@ -73,7 +72,7 @@ function ResearchItem({ paper, index, isOpen, onToggle }: ResearchItemProps) {
           <motion.button
             onClick={onToggle}
             whileTap={{ scale: 0.95 }}
-            className="w-[91px] md:w-[102px]"
+            className="text-left"
           >
             <span className="text-accent-red hover:text-accent-red-foreground transition-all duration-300 backdrop-blur-[1px]">
               {isOpen ? "[Abstract -]" : "[Abstract +]"}
