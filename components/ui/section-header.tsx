@@ -18,7 +18,7 @@ export function SectionHeader({ icon, title }: SectionHeaderProps) {
   };
 
   return (
-    <div className="flex items-center gap-2.5 mb-6">
+    <div className="flex items-center mb-4">
       {icon && (
         <motion.div 
           ref={scope}

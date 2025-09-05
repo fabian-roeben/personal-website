@@ -1,7 +1,7 @@
 import { EducationItem, TeachingItem, Affiliations } from "@/types/content";
 
 const aboutContent = `
-I am a Ph.D. Candidate in Economics at the [University of Cologne](https://wiso.uni-koeln.de/en/) working at the intersection of economics and AI — both using AI in economic research and studying AI as an economic force. Methodologically, I use LLMs and text-as-data, machine learning, and experiments and surveys.
+I am a Ph.D. Candidate in Economics at the [University of Cologne](https://wiso.uni-koeln.de/en/) working at the intersection of economics and AI — both using AI in economic research and studying the economics of AI. Methodologically, I use LLMs and text-as-data, machine learning, and experiments and surveys.
 `;
 
 const affiliationsContent: Affiliations[] = [
