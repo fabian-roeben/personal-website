@@ -17,7 +17,7 @@ export function CustomLink({
   title,
   ...props 
 }: CustomLinkProps) {
-  const isExternal = external || href.startsWith('http');
+  const isExternal = external || href.startsWith('http') || href.endsWith('.pdf');
   return (
     <Link
       href={href}

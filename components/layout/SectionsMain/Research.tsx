@@ -80,17 +80,13 @@ function ResearchItem({ paper, index, isOpen, onToggle }: ResearchItemProps) {
           </motion.button>
         )}
         {paper.links?.map((link, i) => (
-          <motion.a
+          <CustomLink
             key={i}
             href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileTap={{ scale: 0.95 }}
+            className="text-accent-red hover:text-accent-red-foreground transition-all duration-300 backdrop-blur-[1px]"
           >
-            <span className="text-accent-red hover:text-accent-red-foreground transition-all duration-300 backdrop-blur-[1px]">
-              [{link.name}]
-            </span>
-          </motion.a>
+            [{link.name}]
+          </CustomLink>
         ))}
       </div>
 

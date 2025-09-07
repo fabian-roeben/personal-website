@@ -20,8 +20,8 @@ export const papers: Paper[] = [
       { name: "Vanessa Sticher", website: "https://economics.mit.edu/people/phd-students/vanessa-sticher"},
     ],
     links: [
-      { name: "Pre-registration", url: "https://www.socialscienceregistry.org/trials/14561"},
       { name: "PDF", url: "/papers/TMT.pdf"},
+      { name: "Instructions", url: "/papers/tmt_instructions_appendix.pdf"},
     ]
   },
   {
