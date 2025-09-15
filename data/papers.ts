@@ -19,8 +19,8 @@ export const papers: Paper[] = [
       { name: "Chris Roth", website: "https://sites.google.com/site/chrisrotheconomics" },
       { name: "Vanessa Sticher", website: "https://economics.mit.edu/people/phd-students/vanessa-sticher"},
     ],
+    titleLink: "/papers/TMT.pdf",
     links: [
-      { name: "PDF", url: "/papers/TMT.pdf"},
       { name: "Instructions", url: "/papers/tmt_instructions_appendix.pdf"},
     ]
   },

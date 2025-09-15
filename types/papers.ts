@@ -19,4 +19,5 @@ export interface Paper {
   edition?: string;
   links?: Link[];
   abstract?: string;
+  titleLink?: string;
 }

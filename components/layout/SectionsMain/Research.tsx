@@ -39,12 +39,11 @@ function AuthorList({ authors }: { authors: Author[] }) {
 }
 
 function ResearchItem({ paper, index, isOpen, onToggle }: ResearchItemProps) {
-  const pdfLink = paper.links?.find((link) => link.name === "PDF");
   return (
     <li>
       <h4 className="text-muted-foreground backdrop-blur-[1px]">
-        {pdfLink ? (
-          <CustomLink href={pdfLink.url}>{paper.title}</CustomLink>
+        {paper.titleLink ? (
+          <CustomLink href={paper.titleLink} className="underline">{paper.title}</CustomLink>
         ) : (
           paper.title
         )}
