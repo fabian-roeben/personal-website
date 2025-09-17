@@ -66,12 +66,12 @@ function ResearchItem({ paper, index, isOpen, onToggle }: ResearchItemProps) {
         )}
       </div>
 
-      <div className="flex gap-2 mt-0.5">
+      <div className="flex flex-wrap gap-x-2 gap-y-1 mt-0.5">
         {paper.abstract && (
           <motion.button
             onClick={onToggle}
             whileTap={{ scale: 0.95 }}
-            className="text-left"
+            className="text-left whitespace-nowrap"
           >
             <span className="text-accent-red hover:text-accent-red-foreground transition-all duration-300 backdrop-blur-[1px]">
               {isOpen ? "[Abstract -]" : "[Abstract +]"}
@@ -82,7 +82,7 @@ function ResearchItem({ paper, index, isOpen, onToggle }: ResearchItemProps) {
           <CustomLink
             key={i}
             href={link.url}
-            className="text-accent-red hover:text-accent-red-foreground transition-all duration-300 backdrop-blur-[1px]"
+            className="text-accent-red hover:text-accent-red-foreground transition-all duration-300 backdrop-blur-[1px] whitespace-nowrap"
           >
             [{link.name}]
           </CustomLink>
