@@ -22,6 +22,7 @@ export const papers: Paper[] = [
     titleLink: "/papers/TMT.pdf",
     links: [
       { name: "Instructions", url: "/papers/tmt_instructions_appendix.pdf"},
+      { name: "CESifo Working Paper", url: "https://www.ifo.de/en/cesifo/publications/2025/working-paper/news-customization-ai"}
     ]
   },
   {
