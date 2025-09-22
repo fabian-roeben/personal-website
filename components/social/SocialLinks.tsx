@@ -39,7 +39,7 @@ export function SocialLinks({ className }: SocialLinksProps) {
         </div>
 
         {/* Divider */}
-        <div className="h-5 w-[1px] bg-border" aria-hidden="true" />
+        <div className="h-5 w-px bg-border" aria-hidden="true" />
 
         {/* Social media icons */}
         <div className="flex items-center gap-3">

@@ -20,11 +20,11 @@ export function Header() {
           if (headerRef.current) {
             // Only hide header if we're not at the top and scrolling down
             if (scrollDifference > 5 && currentScrollY > 100) {
-              headerRef.current.classList.add('header-hidden')
+              headerRef.current.classList.add('-translate-y-[140%]')
             } 
             // Show header when scrolling up or at the top
             else if (scrollDifference < -5 || currentScrollY < 100) {
-              headerRef.current.classList.remove('header-hidden')
+              headerRef.current.classList.remove('-translate-y-[140%]')
             }
           }
           
@@ -52,9 +52,9 @@ export function Header() {
     <div className="h-24">
       <header
         ref={headerRef}
-        className="fixed w-[calc(100%-2rem)] max-w-screen-xl left-1/2 -translate-x-1/2 bg-white/80 dark:bg-gray-800/25 backdrop-blur-md shadow-lg dark:shadow-gray-950/80 rounded-lg z-[100] mt-4 transition-transform duration-700 ease-in-out"
+        className="fixed w-[calc(100%-2rem)] max-w-(--breakpoint-xl) left-1/2 -translate-x-1/2 bg-white/80 dark:bg-gray-800/25 backdrop-blur-md shadow-lg dark:shadow-gray-950/80 rounded-lg z-100 mt-4 transition-transform duration-700 ease-in-out"
       >
-        <nav className="container px-4 py-4 max-w-screen-xl">
+        <nav className="container px-4 py-4 max-w-(--breakpoint-xl)">
           <div className="flex items-center justify-between">
             <Link
               href="/"

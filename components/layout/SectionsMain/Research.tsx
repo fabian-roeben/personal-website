@@ -71,7 +71,7 @@ function ResearchItem({ paper, index, isOpen, onToggle }: ResearchItemProps) {
           <motion.button
             onClick={onToggle}
             whileTap={{ scale: 0.95 }}
-            className="text-left whitespace-nowrap"
+            className="text-left whitespace-nowrap cursor-pointer"
           >
             <span className="text-accent-red hover:text-accent-red-foreground transition-all duration-300 backdrop-blur-[1px]">
               {isOpen ? "[Abstract -]" : "[Abstract +]"}

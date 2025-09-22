@@ -17,8 +17,8 @@ export function ProfileSection() {
   }, [])
 
   return (
-    <div className="flex flex-col items-start text-left md:items-start md:text-left border border-gray-200 rounded-lg w-full md:w-[380px] shadow-sm hover:shadow-md transition-shadow duration-300 md:fixed">
-      <div className="relative w-full aspect-[9/10] overflow-hidden">
+    <div className="flex flex-col items-start text-left md:items-start md:text-left border border-gray-200 rounded-lg w-full md:w-[380px] shadow-xs hover:shadow-md transition-shadow duration-300 md:fixed">
+      <div className="relative w-full aspect-9/10 overflow-hidden">
         <Image
           ref={imgRef}
           src={siteConfig.profileImage.src}
@@ -31,7 +31,7 @@ export function ProfileSection() {
           priority={true}
           onLoad={() => setLoaded(true)}
         />
-        <div className="absolute bottom-0 left-0 right-0 pb-3 pt-10 bg-gradient-to-t from-black/60 via-black/40 to-transparent text-center z-20">
+        <div className="absolute bottom-0 left-0 right-0 pb-3 pt-10 bg-linear-to-t from-black/60 via-black/40 to-transparent text-center z-20">
           <h1 className="text-white">{siteConfig.name.toUpperCase()}</h1>
           <p className="font-light text-lg text-white">
             {siteConfig.jobTitle}

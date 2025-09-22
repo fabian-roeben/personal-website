@@ -3,7 +3,7 @@ export function Footer() {
   
   return (
     <footer className="border-t">
-      <div className="container mx-auto px-0 py-4 max-w-screen-xl">
+      <div className="container mx-auto px-0 py-4 max-w-(--breakpoint-xl)">
         <p className="text-muted-foreground text-sm md:text-left text-center">
           © {currentYear} Fabian Roeben</p>
       </div>

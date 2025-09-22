@@ -24,7 +24,7 @@ export default function Home() {
     <div className="min-h-screen bg-background px-4">
       <Header />
       <main className="container mx-auto py-4 md:py-6 max-w-7xl">
-        <div className="grid gap-4 md:grid-cols-[400px_1fr] md:gap-6 justify-center max-w-screen-xl mx-auto relative">
+        <div className="grid gap-4 md:grid-cols-[400px_1fr] md:gap-6 justify-center max-w-(--breakpoint-xl) mx-auto relative">
           <aside className="animate-slide-up md:animate-slide-left md:h-[calc(100vh-4rem)]">
             <ProfileSection />
           </aside>
