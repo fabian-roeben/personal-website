@@ -1,5 +1,5 @@
 import { CustomLink } from "../ui/link";
-import { Mail, Github, Linkedin, FileText } from "lucide-react";
+import { Mail, Github, Linkedin, FileText, GraduationCap } from "lucide-react";
 import CologneIcon from "../ui/icons/cologne-icon";
 import { FaXTwitter } from "react-icons/fa6";
 import { siteConfig } from "@/data/siteConfig";
@@ -63,6 +63,13 @@ export function SocialLinks({ className }: SocialLinksProps) {
             title="X (formerly Twitter)"
           >
             <FaXTwitter size={20} strokeWidth={1.5} />
+          </CustomLink>
+          <CustomLink
+            href={siteConfig.socials.googleScholar}
+            aria-label="Google Scholar Profile"
+            title="Google Scholar"
+          >
+            <GraduationCap size={24} strokeWidth={1.5} />
           </CustomLink>
         </div>
       </div>

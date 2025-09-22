@@ -21,6 +21,7 @@ export const siteConfig = {
     github: "https://github.com/fabian-roeben",
     linkedin: "https://linkedin.com/in/fabianroeben",
     twitter: "https://x.com/RoebenFabian",
+    googleScholar: "https://scholar.google.de/citations?user=MhHWrL4AAAAJ",
   },
   profileImage: {
     src: "/profile.jpg",
