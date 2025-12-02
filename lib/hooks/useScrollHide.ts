@@ -5,7 +5,7 @@ interface UseScrollHideOptions {
   threshold?: number;
   /** Minimum scroll position before hiding is enabled (default: 100) */
   minScrollPosition?: number;
-  /** CSS class to add when hidden */
+  /** CSS class to add when hidden (default: "header-hidden" which accounts for safe areas) */
   hiddenClass?: string;
 }
 
@@ -16,7 +16,7 @@ interface UseScrollHideOptions {
 export function useScrollHide<T extends HTMLElement>({
   threshold = 5,
   minScrollPosition = 100,
-  hiddenClass = "-translate-y-[140%]",
+  hiddenClass = "header-hidden",
 }: UseScrollHideOptions = {}): RefObject<T | null> {
   const elementRef = useRef<T>(null);
   const lastScrollY = useRef(0);

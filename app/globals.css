@@ -100,7 +100,12 @@
 
 @layer utilities {
   .header-hidden {
-    transform: translate(-50%, -140%);
+    /* 
+     * Hide navbar above the Dynamic Island:
+     * - translateX(-50%) keeps horizontal centering
+     * - translateY moves up by: full height + safe area inset
+     */
+    transform: translateX(-50%) translateY(calc(-100% - env(safe-area-inset-top, 0px))) !important;
   }
 }
 
