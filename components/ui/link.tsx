@@ -9,15 +9,17 @@ interface CustomLinkProps {
   title?: string;
 }
 
-export function CustomLink({ 
-  href, 
-  children, 
+export function CustomLink({
+  href,
+  children,
   className,
   external = false,
   title,
-  ...props 
+  ...props
 }: CustomLinkProps) {
-  const isExternal = external || href.startsWith('http') || href.endsWith('.pdf');
+  const isExternal =
+    external || href.startsWith("http") || href.endsWith(".pdf");
+
   return (
     <Link
       href={href}

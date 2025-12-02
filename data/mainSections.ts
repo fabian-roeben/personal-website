@@ -1,12 +1,15 @@
 import { About } from "@/components/layout/SectionsMain/About";
 import { Education } from "@/components/layout/SectionsMain/Education";
-import { Research } from "@/components/layout/SectionsMain/Research";
+import { Research, ResearchProps } from "@/components/layout/SectionsMain/Research";
 import { Teaching } from "@/components/layout/SectionsMain/Teaching";
-import { FC } from "react";
+// import { Software } from "@/components/layout/SectionsMain/Software";
+import { ComponentType } from "react";
+
+type SectionComponent = ComponentType | ComponentType<ResearchProps>;
 
 interface Section {
   id: string;
-  component: FC<any>;
+  component: SectionComponent;
 }
 
 export const mainSections: Section[] = [
@@ -22,6 +25,10 @@ export const mainSections: Section[] = [
     id: "research",
     component: Research,
   },
+  // {
+  //   id: "software",
+  //   component: Software,
+  // },
   {
     id: "teaching",
     component: Teaching,

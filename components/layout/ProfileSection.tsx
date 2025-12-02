@@ -17,7 +17,7 @@ export function ProfileSection() {
   }, [])
 
   return (
-    <div className="flex flex-col items-start text-left md:items-start md:text-left border border-gray-200 rounded-lg w-full md:w-[380px] shadow-xs hover:shadow-md transition-shadow duration-300 md:fixed">
+    <div className="flex flex-col items-start text-left md:items-start md:text-left border border-gray-200 rounded-lg w-full md:w-[380px] shadow-xs hover:shadow-md transition-shadow duration-300 md:fixed bg-white dark:bg-[hsl(215,50%,8%)]">
       <div className="relative w-full aspect-9/10 overflow-hidden">
         <Image
           ref={imgRef}
@@ -38,7 +38,7 @@ export function ProfileSection() {
           </p>
         </div>
       </div>
-      <div className="bg-background rounded-b-lg p-4">
+      <div className="rounded-b-lg p-4">
         <SocialLinks />
       </div>
     </div>

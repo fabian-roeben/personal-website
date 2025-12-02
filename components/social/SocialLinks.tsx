@@ -22,12 +22,12 @@ export function SocialLinks({ className }: SocialLinksProps) {
       {/* Email link */}
       <div className="flex items-center gap-3">
         <Mail size={20} strokeWidth={1.5} />
-        <a
+        <CustomLink
           href={`mailto:${siteConfig.email}`}
-          className="hover:text-accent-red transition-all duration-300 dark:duration-0"
+          aria-label={`Email ${siteConfig.name}`}
         >
           {siteConfig.email.replace("@", "[at]")}
-        </a>
+        </CustomLink>
       </div>
 
       {/* CV link Social media icons */}

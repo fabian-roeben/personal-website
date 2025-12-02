@@ -4,13 +4,13 @@ import { mainSections } from "@/data/mainSections";
 import { papers } from "@/data/papers";
 
 export function MainContent() {
-  const jobMarketPaperIndex = papers.findIndex(
+  const jobMarketPaper = papers.find(
     (paper) => paper.category === "Job Market Paper"
   );
-  const [openAbstractIndex, setOpenAbstractIndex] = useState<number>(jobMarketPaperIndex);
+  const [openAbstractTitle, setOpenAbstractTitle] = useState<string | null>(jobMarketPaper?.title || null);
 
-  const toggleAbstract = (index: number) => {
-    setOpenAbstractIndex(currentIndex => currentIndex === index ? -1 : index);
+  const toggleAbstract = (title: string) => {
+    setOpenAbstractTitle(currentTitle => currentTitle === title ? null : title);
   };
 
   return (
@@ -20,7 +20,7 @@ export function MainContent() {
           return (
             <Component
               key={id}
-              openAbstractIndex={openAbstractIndex}
+              openAbstractTitle={openAbstractTitle}
               toggleAbstract={toggleAbstract}
             />
           );

@@ -1,7 +1,12 @@
-import { EducationItem, TeachingItem, Affiliations } from "@/types/content";
+import {
+  EducationItem,
+  TeachingItem,
+  Affiliations,
+  SoftwareProject,
+} from "@/types/content";
 
 const aboutContent = `
-I am a Ph.D. Candidate in Economics at the [University of Cologne](https://wiso.uni-koeln.de/en/) working at the intersection of economics and AI — both using AI in economic research and studying the economics of AI. Methodologically, I use LLMs and text-as-data, machine learning, and experiments and surveys.
+I am a Ph.D. candidate in Economics at the [University of Cologne](https://wiso.uni-koeln.de/en/) working at the intersection of applied AI and behavioral economics. Two specific themes in my work are (i) building mobile apps as platforms for large-scale RCTs to understand the impacts of AI and (ii) using advances in AI / ML / NLP to find low-dimensional representations of the world from high-dimensional data.
 `;
 
 const affiliationsContent: Affiliations[] = [
@@ -52,9 +57,27 @@ const teachingContent: TeachingItem[] = [
   "Project Seminar: Applied Econometrics (undergraduate)",
 ];
 
+const softwareIntro = `
+Much of my research relies on custom software, from mobile news apps for large-scale field experiments to ML and NLP pipelines that score papers and construct latent traits from rich data. I maintain reusable codebases for experimental platforms, measurement pipelines, and LLM-based tools such as multi-agent rewriting and reflective prompt optimization. You can find selected projects and links to code on my software page and GitHub.
+`;
+
+const softwareProjects: SoftwareProject[] = [
+  {
+    title: "NewsShift",
+    description:
+      "An AI-powered news platform that lets readers customize article characteristics — such as complexity, sentiment, and opinion level — while preserving factual accuracy. Built on research showing that customization increases news satisfaction without harming knowledge or polarization.",
+    links: [
+      { name: "Website", url: "https://www.news-shift.com/" },
+      { name: "Mobile App - Coming soon!", url: "#" },
+    ],
+  },
+];
+
 export const mainContentData = {
   about: aboutContent,
   education: educationContent,
   teaching: teachingContent,
   affiliations: affiliationsContent,
+  softwareIntro,
+  softwareProjects,
 };

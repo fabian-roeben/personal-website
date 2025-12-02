@@ -1,34 +1,79 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export function WaveBackground() {
-    return (
-      <div className="bg-waves -z-10 text-[hsl(354,75%,25%)] dark:text-[hsl(354,75%,80%)]" aria-hidden="true">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="100%" 
-          height="100%" 
-          preserveAspectRatio="none" 
-          viewBox="0 0 1440 560"
-          className="w-full h-full opacity-[0.4] dark:opacity-[0.3]"
-        >
-          <g mask="url(#SvgjsMask1117)" fill="none">
-            <path 
-              d="M -268.4914559011871,534 C -124.49,461.2 163.51,196.4 451.5085440988129,170 C 739.51,143.6 883.51,403.2 1171.5085440988128,402 C 1459.51,400.8 1837.81,158.6 1891.5085440988128,164 C 1945.21,169.4 1530.3,376 1440,429" 
-              style={{ stroke: 'currentColor', strokeWidth: 1 }}
-            />
-            <path 
-              d="M -1240.1577849753699,323 C -1096.16,306.8 -808.16,223 -520.1577849753697,242 C -232.16,261 -88.16,444.8 199.84221502463026,418 C 487.84,391.2 671.81,134.6 919.8422150246303,108 C 1167.87,81.4 1335.97,249.6 1440,285" 
-              style={{ stroke: 'currentColor', strokeWidth: 1 }}
-            />
-            <path 
-              d="M -1148.0412811308602,215 C -1004.04,262.2 -716.04,482 -428.0412811308601,451 C -140.04,420 3.96,61.2 291.9587188691399,60 C 579.96,58.8 782.35,441 1011.9587188691398,445 C 1241.57,449 1354.39,153 1440,80" 
-              style={{ stroke: 'currentColor', strokeWidth: 1 }}
-            />
-          </g>
-          <defs>
-            <mask id="SvgjsMask1117">
-              <rect width="1440" height="560" fill="#ffffff"></rect>
-            </mask>
-          </defs>
-        </svg>
-      </div>
-    )
-  }
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    // Check for reduced motion preference
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const handleMotionChange = (e: MediaQueryListEvent) => {
+      setPrefersReducedMotion(e.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMotionChange);
+
+    // Only track mouse if reduced motion is not preferred
+    if (!mediaQuery.matches) {
+      const handleMouseMove = (e: MouseEvent) => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      };
+
+      const handleMouseEnter = () => setIsHovering(true);
+      const handleMouseLeave = () => setIsHovering(false);
+
+      window.addEventListener("mousemove", handleMouseMove);
+      document.body.addEventListener("mouseenter", handleMouseEnter);
+      document.body.addEventListener("mouseleave", handleMouseLeave);
+
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+        document.body.removeEventListener("mouseenter", handleMouseEnter);
+        document.body.removeEventListener("mouseleave", handleMouseLeave);
+        mediaQuery.removeEventListener("change", handleMotionChange);
+      };
+    }
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMotionChange);
+    };
+  }, []);
+
+  return (
+    <div
+      className="fixed inset-0 -z-10 pointer-events-none bg-white dark:bg-[hsl(215,50%,4%)]"
+      aria-hidden="true"
+    >
+      {/* Base dot grid - always visible at low opacity */}
+      <div
+        className="absolute inset-0 opacity-[0.12] dark:opacity-[0.08]"
+        style={{
+          backgroundImage: `radial-gradient(circle, hsl(215 25% 50%) 1px, transparent 1px)`,
+          backgroundSize: "24px 24px",
+        }}
+      />
+
+      {/* Enhanced dots near cursor - adds depth (disabled for reduced motion) */}
+      {!prefersReducedMotion && (
+        <div
+          className="absolute inset-0 opacity-[0.7] dark:opacity-[0.45] transition-opacity duration-200"
+          style={{
+            backgroundImage: `radial-gradient(circle, hsl(215 25% 50%) 1px, transparent 1px)`,
+            backgroundSize: "24px 24px",
+            maskImage: isHovering
+              ? `radial-gradient(circle 100px at ${mousePosition.x}px ${mousePosition.y}px, black 0%, transparent 100%)`
+              : `radial-gradient(circle 100px at 50% 50%, transparent 0%, transparent 100%)`,
+            WebkitMaskImage: isHovering
+              ? `radial-gradient(circle 100px at ${mousePosition.x}px ${mousePosition.y}px, black 0%, transparent 100%)`
+              : `radial-gradient(circle 100px at 50% 50%, transparent 0%, transparent 100%)`,
+          }}
+        />
+      )}
+    </div>
+  );
+}

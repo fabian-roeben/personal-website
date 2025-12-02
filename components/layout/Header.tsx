@@ -1,52 +1,24 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
-import Link from "next/link"
-import { CustomLink } from "../ui/link"
-import { ThemeToggle } from "../ui/theme-toggle"
+import Link from "next/link";
+import { CustomLink } from "../ui/link";
+import { ThemeToggle } from "../ui/theme-toggle";
+import { useScrollHide } from "@/lib/hooks/useScrollHide";
 
 export function Header() {
-  const headerRef = useRef<HTMLElement>(null)
-  const lastScrollY = useRef(0)
-  const ticking = useRef(false)
+  const headerRef = useScrollHide<HTMLElement>();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!ticking.current) {
-        window.requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY
-          const scrollDifference = currentScrollY - lastScrollY.current
-          
-          if (headerRef.current) {
-            // Only hide header if we're not at the top and scrolling down
-            if (scrollDifference > 5 && currentScrollY > 100) {
-              headerRef.current.classList.add('-translate-y-[140%]')
-            } 
-            // Show header when scrolling up or at the top
-            else if (scrollDifference < -5 || currentScrollY < 100) {
-              headerRef.current.classList.remove('-translate-y-[140%]')
-            }
-          }
-          
-          lastScrollY.current = currentScrollY
-          ticking.current = false
-        })
-        ticking.current = true
-      }
+  const handleHomeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Only scroll to top if already on home page, otherwise navigate normally
+    if (window.location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      window.history.replaceState(null, "", "/");
     }
-
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    })
-    window.history.replaceState(null, "", "/")
-  }
+  };
 
   return (
     <div className="h-24">
@@ -58,7 +30,7 @@ export function Header() {
           <div className="flex items-center justify-between">
             <Link
               href="/"
-              onClick={handleScrollToTop}
+              onClick={handleHomeClick}
               className="flex items-center gap-2 md:gap-3"
             >
               <span className="font-medium">Fabian Roeben</span>
@@ -70,14 +42,20 @@ export function Header() {
               >
                 Research
               </Link>
-              <CustomLink href="/cv_roeben.pdf">
-                CV
-              </CustomLink>
+              {/* TODO: Uncomment when Software section is ready
+              <Link
+                href="/software"
+                className="hidden md:block text-muted-foreground hover:text-accent-red duration-300 dark:duration-0"
+              >
+                Software
+              </Link>
+              */}
+              <CustomLink href="/cv_roeben.pdf">CV</CustomLink>
               <ThemeToggle />
             </div>
           </div>
         </nav>
       </header>
     </div>
-  )
+  );
 }

@@ -12,7 +12,7 @@ export const papers: Paper[] = [
   {
     title: "News Customization with AI",
     category: "Working Papers",
-    abstract: "News outlets compete for engagement rather than reader satisfaction, leading to persistent mismatches between consumer demand and the supply of news. We test whether offering people the opportunity to customize the news can address this mismatch by unbundling presentation from coverage. In our AI-powered news app, users can customize article characteristics, such as the complexity of the writing or the extent of opinion, while holding the underlying news event constant. Using rich news consumption data from large-scale field experiments, we uncover substantial heterogeneity in news preferences. While a significant fraction of users demand politically aligned news, the vast majority of users display a high and persistent demand for less opinionated and more fact-driven news. Customization also leads to a better match between the news consumed and stated preferences, increasing news satisfaction.",
+    abstract: "We introduce a new method to study news preferences by unbundling presentation from coverage. In our AI-powered news app, users can customize article characteristics, such as complexity or extent of opinion, while holding the underlying news event constant. In large-scale field experiments, we find that customization leads to better matching between the news consumed and stated preferences, increasing news satisfaction. While a significant fraction of users demand politically aligned news, the majority of users display high and persistent demand for less opinionated and more fact-driven news. By contrast, users not offered customization keep consuming news misaligned with their stated preferences.",
     authors: [
       { name: "Felix Chopra", website: "https://www.felixchopra.com/" },
       { name: "Ingar Haaland", website: "https://sites.google.com/site/ingarhaaland/" },
@@ -22,22 +22,53 @@ export const papers: Paper[] = [
     titleLink: "/papers/TMT.pdf",
     links: [
       { name: "Instructions", url: "/papers/tmt_instructions_appendix.pdf"},
-      { name: "CESifo WP", url: "https://www.ifo.de/en/cesifo/publications/2025/working-paper/news-customization-ai"}
+      { name: "CESifo WP", url: "https://www.ifo.de/en/cesifo/publications/2025/working-paper/news-customization-ai"},
+      { name: "Mobile App", url: "https://www.news-shift.com/" },
+    ],
+    media: [
+      { name: "FAZ", url: "https://fazarchiv.faz.net/faz-portal/document?uid=FAZ__FD02025120150103336566028" },
     ]
   },
   {
-    title: "Unraveling Sovereign Risk: Narrative Evidence from Earnings Calls",
+    title: "How Far Do Latent Traits Travel?",
+    category: "Selected Work in Progress",
+    links: [
+      { name: "Data I", url: "https://huggingface.co/datasets/LLM-Digital-Twin/Twin-2K-500" },
+      { name: "Data II", url: "https://huggingface.co/datasets/LLM-Digital-Twin/Twin-2K-500-Mega-Study" }
+    ]
+  },
+  {
+    title: "The Asymmetric Response to Political Spin",
     category: "Selected Work in Progress",
     authors: [
-      { name: "Nicolas Röver", website: "https://sites.google.com/view/nicolasroever/" },
+      { name: "Felix Chopra", website: "https://www.felixchopra.com/" },
+      { name: "Ingar Haaland", website: "https://sites.google.com/site/ingarhaaland/" },
+      { name: "Chris Roth", website: "https://sites.google.com/site/chrisrotheconomics" },
+      { name: "Vanessa Sticher", website: "https://vanessasticher.github.io/"},
     ],
   },
   {
-    title: "Digging Deeper into The Impact of Capital Flow Management: Evidence from A New Dataset",
+    title: "Experts Under Pressure: Information Aggregation and Misallocation in Emergency Triage",
     category: "Selected Work in Progress",
-    authors: [
-      { name: "Dimitre Milkov" },
-      { name: "Niamh Sheridan" }
-    ],
+    links: [
+      { name: "Data I", url: "https://physionet.org/content/mimic-iv-ed/2.2/" },
+      { name: "Data II", url: "https://physionet.org/content/mimiciv/3.1/" },
+      { name: "Data III", url: "https://physionet.org/content/mimic-iv-note/2.2/" }
+    ]
   },
+  // {
+  //   title: "Self-Revising Language Models for Learning Economic Decision Rules",
+  //   category: "Selected Work in Progress",
+  //   links: [
+  //     { name: "Data", url: "https://github.com/jcpeterson/choices13k" },
+  //   ]
+  // },
+  // {
+  //   title: "Location Traps",
+  //   category: "Selected Work in Progress",
+  //   authors: [
+  //     { name: "Chris Roth", website: "https://sites.google.com/site/chrisrotheconomics" },
+  //     { name: "Sebastian Siegloch", website: "https://sites.google.com/view/siegloch/"},
+  //   ],
+  // },
 ];
