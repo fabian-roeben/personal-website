@@ -1,6 +1,6 @@
 # Academic Personal Website Template
 
-A personal website template for academics built with Next.js 15, TypeScript, and Tailwind CSS. Designed for researchers who need a clean, professional web presence to showcase their work, publications, and academic profile.
+A personal website template for academics built with Next.js 16, TypeScript, and Tailwind CSS. Designed for researchers who need a clean, professional web presence to showcase their work, publications, and academic profile.
 
 ## Overview
 
@@ -17,7 +17,7 @@ This template provides a complete, easy-to-customize solution for academic perso
 
 ## Technology Stack
 
-- **Framework:** Next.js 15 (App Router)
+- **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **Animation:** Framer Motion
@@ -101,7 +101,7 @@ export const papers: Paper[] = [
 Make sure to add any corresponding files (like PDFs) to the `/public/papers/` directory.
 
 ### 4. CV
-Replace the `cv_roeben.pdf` file in the `/public` directory with your own CV.
+Replace the CV file in the `/public` directory with your own, and update the `cv` path in `data/siteConfig.ts` to match.
 
 ### 5. Styling
 You can customize the color scheme and other design elements in `tailwind.config.ts` and `app/globals.css`.

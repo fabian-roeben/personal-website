@@ -39,5 +39,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# editor/tool configs
+.claude/settings.local.json
+
 # Misc
 nul

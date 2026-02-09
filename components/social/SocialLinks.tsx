@@ -1,6 +1,5 @@
 import { CustomLink } from "../ui/link";
-import { Mail, Github, Linkedin, FileText, GraduationCap } from "lucide-react";
-import CologneIcon from "../ui/icons/cologne-icon";
+import { Mail, Github, Linkedin, FileText, GraduationCap, MapPin } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { siteConfig } from "@/data/siteConfig";
 import { cn } from "@/lib/utils";
@@ -14,7 +13,7 @@ export function SocialLinks({ className }: SocialLinksProps) {
     <div className={cn("flex flex-col gap-3", className)}>
       {/* Location */}
       <div className="flex items-center gap-3">
-        <CologneIcon className="w-6 h-6 -ml-0.5 -mt-0.5 fill-black dark:fill-white" />
+        <MapPin size={20} strokeWidth={1.5} />
         <CustomLink href={siteConfig.locationLink}>
           {siteConfig.location}
         </CustomLink>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CustomLink } from "../ui/link";
 import { ThemeToggle } from "../ui/theme-toggle";
 import { useScrollHide } from "@/lib/hooks/useScrollHide";
+import { siteConfig } from "@/data/siteConfig";
 
 export function Header() {
   const headerRef = useScrollHide<HTMLElement>();
@@ -34,7 +35,7 @@ export function Header() {
               onClick={handleHomeClick}
               className="flex items-center gap-2 md:gap-3"
             >
-              <span className="font-medium">Fabian Roeben</span>
+              <span className="font-medium">{siteConfig.name}</span>
             </Link>
             <div className="flex items-center gap-3 md:gap-5">
               <Link
@@ -51,7 +52,7 @@ export function Header() {
                 Software
               </Link>
               */}
-              <CustomLink href="/cv_roeben.pdf">CV</CustomLink>
+              <CustomLink href={siteConfig.cv}>CV</CustomLink>
               <ThemeToggle />
             </div>
           </div>
