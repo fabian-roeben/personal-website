@@ -12,6 +12,7 @@ export const papers: Paper[] = [
   {
     title: "News Customization with AI",
     category: "Working Papers",
+    status: "Revise and Resubmit, Review of Economic Studies",
     abstract: "We introduce a new method to study news preferences by unbundling presentation from coverage. In our AI-powered news app, users can customize article characteristics, such as complexity or extent of opinion, while holding the underlying news event constant. In large-scale field experiments, we find that customization leads to better matching between the news consumed and stated preferences, increasing news satisfaction. While a significant fraction of users demand politically aligned news, the majority of users display high and persistent demand for less opinionated and more fact-driven news. By contrast, users not offered customization keep consuming news misaligned with their stated preferences.",
     authors: [
       { name: "Felix Chopra", website: "https://www.felixchopra.com/" },

@@ -8,9 +8,11 @@ export function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
+  /* eslint-disable react-hooks/set-state-in-effect -- SSR hydration guard */
   useEffect(() => {
     setMounted(true)
   }, [])
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   if (!mounted) {
     return null

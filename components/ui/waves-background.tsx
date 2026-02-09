@@ -7,8 +7,8 @@ export function WaveBackground() {
   const [isHovering, setIsHovering] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
+  /* eslint-disable react-hooks/set-state-in-effect -- syncing with browser media query */
   useEffect(() => {
-    // Check for reduced motion preference
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     setPrefersReducedMotion(mediaQuery.matches);
 
@@ -43,6 +43,7 @@ export function WaveBackground() {
       mediaQuery.removeEventListener("change", handleMotionChange);
     };
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   return (
     <div

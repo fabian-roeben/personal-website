@@ -9,12 +9,14 @@ export function ProfileSection() {
   const [animate, setAnimate] = useState(true)
   const imgRef = useRef<HTMLImageElement | null>(null)
 
+  /* eslint-disable react-hooks/set-state-in-effect -- sync check on mount for cached images */
   useLayoutEffect(() => {
     if (imgRef.current?.complete) {
       setLoaded(true)
       setAnimate(false)
     }
   }, [])
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   return (
     <div className="flex flex-col items-start text-left md:items-start md:text-left border border-gray-200 rounded-lg w-full md:w-[380px] shadow-xs hover:shadow-md transition-shadow duration-300 md:fixed bg-white dark:bg-[hsl(215,50%,8%)]">
