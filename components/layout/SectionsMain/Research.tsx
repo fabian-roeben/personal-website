@@ -93,7 +93,9 @@ function ResearchItem({ paper, isOpen, onToggle }: ResearchItemProps) {
       <div className="flex flex-wrap gap-x-2 gap-y-1 mt-0.5">
         {paper.abstract && (
           <motion.button
+            type="button"
             onClick={onToggle}
+            aria-expanded={isOpen}
             whileTap={{ scale: 0.95 }}
             className="text-left whitespace-nowrap cursor-pointer"
           >

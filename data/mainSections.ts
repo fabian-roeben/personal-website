@@ -1,15 +1,12 @@
 import { About } from "@/components/layout/SectionsMain/About";
 import { Education } from "@/components/layout/SectionsMain/Education";
-import { Research } from "@/components/layout/SectionsMain/Research";
+import { Research, ResearchProps } from "@/components/layout/SectionsMain/Research";
 import { Teaching } from "@/components/layout/SectionsMain/Teaching";
-// import { Software } from "@/components/layout/SectionsMain/Software";
 import { ComponentType } from "react";
 
-interface Section {
-  id: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  component: ComponentType<any>;
-}
+type Section =
+  | { id: "research"; component: ComponentType<ResearchProps> }
+  | { id: "about" | "education" | "teaching"; component: ComponentType };
 
 export const mainSections: Section[] = [
   {
@@ -24,10 +21,6 @@ export const mainSections: Section[] = [
     id: "research",
     component: Research,
   },
-  // {
-  //   id: "software",
-  //   component: Software,
-  // },
   {
     id: "teaching",
     component: Teaching,

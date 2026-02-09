@@ -15,17 +15,19 @@ export function MainContent() {
 
   return (
     <div className="space-y-8 mt-6 md:mt-0">
-      {mainSections.map(({ id, component: Component }) => {
-        if (id === "research") {
+      {mainSections.map((section) => {
+        if (section.id === "research") {
+          const Component = section.component;
           return (
             <Component
-              key={id}
+              key={section.id}
               openAbstractTitle={openAbstractTitle}
               toggleAbstract={toggleAbstract}
             />
           );
         }
-        return <Component key={id} />;
+        const Component = section.component;
+        return <Component key={section.id} />;
       })}
     </div>
   );

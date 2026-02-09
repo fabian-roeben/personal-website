@@ -17,33 +17,30 @@ export function WaveBackground() {
     };
 
     mediaQuery.addEventListener("change", handleMotionChange);
-
-    // Only track mouse if reduced motion is not preferred
-    if (!mediaQuery.matches) {
-      const handleMouseMove = (e: MouseEvent) => {
-        setMousePosition({ x: e.clientX, y: e.clientY });
-      };
-
-      const handleMouseEnter = () => setIsHovering(true);
-      const handleMouseLeave = () => setIsHovering(false);
-
-      window.addEventListener("mousemove", handleMouseMove);
-      document.body.addEventListener("mouseenter", handleMouseEnter);
-      document.body.addEventListener("mouseleave", handleMouseLeave);
-
-      return () => {
-        window.removeEventListener("mousemove", handleMouseMove);
-        document.body.removeEventListener("mouseenter", handleMouseEnter);
-        document.body.removeEventListener("mouseleave", handleMouseLeave);
-        mediaQuery.removeEventListener("change", handleMotionChange);
-      };
-    }
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleMotionChange);
-    };
+    return () => mediaQuery.removeEventListener("change", handleMotionChange);
   }, []);
   /* eslint-enable react-hooks/set-state-in-effect */
+
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    const handleMouseEnter = () => setIsHovering(true);
+    const handleMouseLeave = () => setIsHovering(false);
+
+    window.addEventListener("mousemove", handleMouseMove);
+    document.body.addEventListener("mouseenter", handleMouseEnter);
+    document.body.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      document.body.removeEventListener("mouseenter", handleMouseEnter);
+      document.body.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, [prefersReducedMotion]);
 
   return (
     <div

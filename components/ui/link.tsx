@@ -23,7 +23,7 @@ export function CustomLink({
   return (
     <Link
       href={href}
-      target={isExternal ? "_blank" : "_self"}
+      target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
       title={title}
       className={cn(

@@ -3,6 +3,7 @@ import Image from "next/image"
 import { SocialLinks } from "../social/SocialLinks"
 import { useLayoutEffect, useRef, useState } from "react"
 import { siteConfig } from "@/data/siteConfig"
+import { cn } from "@/lib/utils"
 
 export function ProfileSection() {
   const [loaded, setLoaded] = useState(false)
@@ -29,7 +30,11 @@ export function ProfileSection() {
           sizes="(max-width: 768px) 100vw, 380px"
           placeholder="blur"
           blurDataURL="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><rect width='16' height='16' fill='%23c7c7c7'/></svg>"
-          className={`rounded-t-lg object-cover ${animate ? "transition-opacity" : ""} transition-transform duration-500 ease-in-out motion-safe:hover:scale-105 ${loaded ? "opacity-100" : "opacity-0"}`}
+          className={cn(
+            "rounded-t-lg object-cover duration-500 ease-in-out motion-safe:hover:scale-105",
+            animate ? "transition-[opacity,transform]" : "transition-transform",
+            loaded ? "opacity-100" : "opacity-0"
+          )}
           priority={true}
           onLoad={() => setLoaded(true)}
         />

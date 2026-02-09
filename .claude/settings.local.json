@@ -5,7 +5,9 @@
       "mcp__next-devtools__nextjs_docs",
       "Bash(npm run build:*)",
       "Bash(npm run lint:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(wc -l:*)",
+      "Bash(Remove-Item \"C:\\\\Users\\\\fabia\\\\Dropbox\\\\Dokumente\\\\5_Other\\\\personal-website\\\\.eslintrc.json\")"
     ]
   }
 }
