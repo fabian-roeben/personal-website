@@ -11,11 +11,20 @@ export default function Home() {
     "name": siteConfig.name,
     "url": siteConfig.url,
     "jobTitle": siteConfig.jobTitle,
+    "description": siteConfig.description,
+    "email": siteConfig.email,
+    "image": `${siteConfig.url}${siteConfig.profileImage.src}`,
+    "affiliation": {
+      "@type": "Organization",
+      "name": siteConfig.location,
+      "url": siteConfig.locationLink,
+    },
     "sameAs": [
       siteConfig.socials.github,
       siteConfig.socials.linkedin,
       siteConfig.socials.twitter,
-    ]
+      siteConfig.socials.googleScholar,
+    ],
   }
 
   return (
