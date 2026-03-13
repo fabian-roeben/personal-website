@@ -20,8 +20,8 @@ export function ProfileSection() {
   /* eslint-enable react-hooks/set-state-in-effect */
 
   return (
-    <div className="flex flex-col items-start text-left md:items-start md:text-left border border-border rounded-lg w-full md:w-[380px] shadow-xs hover:shadow-md transition-shadow duration-300 md:fixed bg-card">
-      <div className="relative w-full aspect-9/10 overflow-hidden">
+    <div className="flex flex-col items-start text-left md:items-start md:text-left rounded-lg border border-border/20 w-full md:w-[380px] shadow-xs hover:shadow-md transition-shadow duration-300 md:fixed bg-card">
+      <div className="relative w-full aspect-9/10 overflow-hidden rounded-t-lg">
         <Image
           ref={imgRef}
           src={siteConfig.profileImage.src}
@@ -45,7 +45,7 @@ export function ProfileSection() {
           </p>
         </div>
       </div>
-      <div className="rounded-b-lg p-4">
+      <div className="w-full rounded-b-lg bg-background p-4">
         <SocialLinks />
       </div>
     </div>

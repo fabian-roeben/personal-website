@@ -15,7 +15,7 @@ export function About() {
           </ReactMarkdown>
         </div>
         <div className="backdrop-blur-[1px] font-medium">
-          <p>I will join ETH Zurich as a Post-Doctoral Researcher in Fall 2026.</p>
+          <p>I will join ETH Zurich as a Postdoc in Fall 2026.</p>
         </div>
         <div className="backdrop-blur-[1px]">
           <p>

@@ -12,6 +12,7 @@ export const papers: Paper[] = [
   {
     title: "News Customization with AI",
     category: "Working Papers",
+    status: "Revise & Resubmit, Review of Economic Studies",
     abstract: "We introduce a new method to study news preferences by unbundling presentation from coverage. In our AI-powered news app, users can customize article characteristics, such as complexity or extent of opinion, while holding the underlying news event constant. In large-scale field experiments, we find that customization leads to better matching between the news consumed and stated preferences, increasing news satisfaction. While a significant fraction of users demand politically aligned news, the majority of users display high and persistent demand for less opinionated and more fact-driven news. By contrast, users not offered customization keep consuming news misaligned with their stated preferences.",
     authors: [
       { name: "Felix Chopra", website: "https://www.felixchopra.com/" },
@@ -37,16 +38,16 @@ export const papers: Paper[] = [
       { name: "Data II", url: "https://huggingface.co/datasets/LLM-Digital-Twin/Twin-2K-500-Mega-Study" }
     ]
   },
-  {
-    title: "The Asymmetric Response to Political Spin",
-    category: "Selected Work in Progress",
-    authors: [
-      { name: "Felix Chopra", website: "https://www.felixchopra.com/" },
-      { name: "Ingar Haaland", website: "https://sites.google.com/site/ingarhaaland/" },
-      { name: "Chris Roth", website: "https://sites.google.com/site/chrisrotheconomics" },
-      { name: "Vanessa Sticher", website: "https://vanessasticher.github.io/"},
-    ],
-  },
+  // {
+  //   title: "The Asymmetric Response to Political Spin",
+  //   category: "Selected Work in Progress",
+  //   authors: [
+  //     { name: "Felix Chopra", website: "https://www.felixchopra.com/" },
+  //     { name: "Ingar Haaland", website: "https://sites.google.com/site/ingarhaaland/" },
+  //     { name: "Chris Roth", website: "https://sites.google.com/site/chrisrotheconomics" },
+  //     { name: "Vanessa Sticher", website: "https://vanessasticher.github.io/"},
+  //   ],
+  // },
   {
     title: "Experts Under Pressure: Information Aggregation and Misallocation in Emergency Triage",
     category: "Selected Work in Progress",
@@ -56,19 +57,4 @@ export const papers: Paper[] = [
       { name: "Data III", url: "https://physionet.org/content/mimic-iv-note/2.2/" }
     ]
   },
-  // {
-  //   title: "Self-Revising Language Models for Learning Economic Decision Rules",
-  //   category: "Selected Work in Progress",
-  //   links: [
-  //     { name: "Data", url: "https://github.com/jcpeterson/choices13k" },
-  //   ]
-  // },
-  // {
-  //   title: "Location Traps",
-  //   category: "Selected Work in Progress",
-  //   authors: [
-  //     { name: "Chris Roth", website: "https://sites.google.com/site/chrisrotheconomics" },
-  //     { name: "Sebastian Siegloch", website: "https://sites.google.com/view/siegloch/"},
-  //   ],
-  // },
 ];

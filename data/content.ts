@@ -6,7 +6,7 @@ import {
 } from "@/types/content";
 
 const aboutContent = `
-I am a Ph.D. candidate in Economics at the [University of Cologne](https://wiso.uni-koeln.de/en/) working at the intersection of applied AI and behavioral economics. Two specific themes in my work are (i) building mobile apps as platforms for large-scale RCTs to understand the impacts of AI and (ii) using advances in AI / ML / NLP to find low-dimensional representations of the world from high-dimensional data.
+I am a PhD candidate in Economics at the [University of Cologne](https://wiso.uni-koeln.de/en/) working at the intersection of applied AI and behavioral economics. Two specific themes in my work are (i) building mobile apps as platforms for large-scale RCTs to understand the impacts of AI and (ii) using advances in AI / ML / NLP to find low-dimensional representations of the world from high-dimensional data.
 `;
 
 const affiliationsContent: Affiliations[] = [
@@ -26,25 +26,25 @@ const affiliationsContent: Affiliations[] = [
 
 const educationContent: EducationItem[] = [
   {
-    degree: "Ph.D. Economics",
+    degree: "PhD Economics",
     institution: "University of Cologne",
     url: "https://wiso.uni-koeln.de/en/",
-    year: "2026 (expected)",
+    year: "2026",
   },
   {
-    degree: "M.A. Philosophy",
+    degree: "MA Philosophy",
     institution: "University College London",
     url: "https://www.ucl.ac.uk/philosophy/",
     year: "2020",
   },
   {
-    degree: "M.Sc. Finance",
+    degree: "MSc Finance",
     institution: "Stockholm School of Economics",
     url: "https://www.hhs.se",
     year: "2019",
   },
   {
-    degree: "B.Sc. International Business",
+    degree: "BSc International Business",
     institution: "Maastricht University",
     url: "https://www.maastrichtuniversity.nl/about-um/faculties/school-business-and-economics",
     year: "2017",
