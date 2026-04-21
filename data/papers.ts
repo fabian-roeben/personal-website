@@ -31,7 +31,31 @@ export const papers: Paper[] = [
     ]
   },
   {
-    title: "How Far Do Latent Traits Travel?",
+    title: "AI as Organizational Intelligence",
+    category: "Selected Work in Progress"
+  },
+  {
+    title: "Significance Slant",
+    category: "Selected Work in Progress",
+    authors: [
+      { name: "Chris Roth", website: "https://sites.google.com/site/chrisrotheconomics" },
+      { name: "Jakob Schmidhäuser", website: "https://schmidja123.github.io/"},
+      { name: "Michaela Slotwinski", website: "https://sites.google.com/site/michaelaslotwinski/home"},
+    ],
+  },
+    {
+    title: "Digital Support",
+    category: "Selected Work in Progress",
+    authors: [
+      { name: "Elliott Ash", website: "https://elliottash.com/" },
+      { name: "Marine Casalis", website: "https://pp.ethz.ch/people/marine-casalis.html"},
+      { name: "Gloria Gennaro", website: "https://gloriagennaro.rbind.io/"},
+      { name: "Dominik Hangartner", website: "https://pp.ethz.ch/people/dominik-hangartner.html"},
+      { name: "Michael Jacobs", website: "https://pp.ethz.ch/people/michael-jacobs.html" },
+    ],
+  },
+  {
+    title: "Simulating Human Types",
     category: "Selected Work in Progress",
     links: [
       { name: "Data I", url: "https://huggingface.co/datasets/LLM-Digital-Twin/Twin-2K-500" },
@@ -48,13 +72,13 @@ export const papers: Paper[] = [
   //     { name: "Vanessa Sticher", website: "https://vanessasticher.github.io/"},
   //   ],
   // },
-  {
-    title: "Experts Under Pressure: Information Aggregation and Misallocation in Emergency Triage",
-    category: "Selected Work in Progress",
-    links: [
-      { name: "Data I", url: "https://physionet.org/content/mimic-iv-ed/2.2/" },
-      { name: "Data II", url: "https://physionet.org/content/mimiciv/3.1/" },
-      { name: "Data III", url: "https://physionet.org/content/mimic-iv-note/2.2/" }
-    ]
-  },
+  // {
+  //   title: "Experts Under Pressure: Information Aggregation and Misallocation in Emergency Triage",
+  //   category: "Selected Work in Progress",
+  //   links: [
+  //     { name: "Data I", url: "https://physionet.org/content/mimic-iv-ed/2.2/" },
+  //     { name: "Data II", url: "https://physionet.org/content/mimiciv/3.1/" },
+  //     { name: "Data III", url: "https://physionet.org/content/mimic-iv-note/2.2/" }
+  //   ]
+  // },
 ];
