@@ -34,15 +34,15 @@ export const papers: Paper[] = [
     title: "AI as Organizational Intelligence",
     category: "Selected Work in Progress"
   },
-  {
-    title: "Significance Slant",
-    category: "Selected Work in Progress",
-    authors: [
-      { name: "Chris Roth", website: "https://sites.google.com/site/chrisrotheconomics" },
-      { name: "Jakob Schmidhäuser", website: "https://schmidja123.github.io/"},
-      { name: "Michaela Slotwinski", website: "https://sites.google.com/site/michaelaslotwinski/home"},
-    ],
-  },
+  // {
+  //   title: "Significance Slant",
+  //   category: "Selected Work in Progress",
+  //   authors: [
+  //     { name: "Chris Roth", website: "https://sites.google.com/site/chrisrotheconomics" },
+  //     { name: "Jakob Schmidhäuser", website: "https://schmidja123.github.io/"},
+  //     { name: "Michaela Slotwinski", website: "https://sites.google.com/site/michaelaslotwinski/home"},
+  //   ],
+  // },
     {
     title: "Digital Support",
     category: "Selected Work in Progress",
