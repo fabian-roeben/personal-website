@@ -4,30 +4,93 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-deployment
+  cancel-in-progress: false
 
 jobs:
   deploy:
+    name: Build and deploy production
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: production
+      url: https://fabianroeben.com/
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
-    - name: Build Project
-      run: |
-        npm install
-        npm run build
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: 22
+          cache: npm
 
-    - name: Deploy via FTPS
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
-        server: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        port: ${{ secrets.FTP_PORT }}
-        protocol: ftps
-        local-dir: "out/"
-        server-dir: ${{ secrets.FTP_PATH }} 
-        dangerous-clean-slate: true        # Removes old files before deployment
-        exclude: |
-          **/*.map
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build static export
+        run: npm run build
+
+      - name: Validate static export
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f out/index.html
+          test -f out/404.html
+          test -f out/robots.txt
+          test -f out/sitemap.xml
+          test -f out/.htaccess
+
+      - name: Deploy via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@110f9186c050f71550953127052e77650219c287 # v4.4.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          protocol: ftps
+          security: strict
+          timeout: 60000
+          local-dir: out/
+          server-dir: ${{ secrets.FTP_PATH }}
+          exclude: |
+            **/*.map
+
+      - name: Verify production
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          homepage="$(curl --fail --silent --show-error \
+            --retry 6 --retry-delay 10 --retry-all-errors \
+            --max-time 30 'https://fabianroeben.com/')"
+          grep -Fq 'Fabian Roeben' <<< "$homepage"
+
+          curl --fail --silent --show-error \
+            --retry 6 --retry-delay 10 --retry-all-errors \
+            --max-time 30 --output /dev/null \
+            'https://fabianroeben.com/robots.txt'
+          curl --fail --silent --show-error \
+            --retry 6 --retry-delay 10 --retry-all-errors \
+            --max-time 30 --output /dev/null \
+            'https://fabianroeben.com/sitemap.xml'
+
+          missing_status="$(curl --silent --show-error --output /dev/null \
+            --write-out '%{http_code}' --max-time 30 \
+            'https://fabianroeben.com/deployment-health-check-missing')"
+          test "$missing_status" = '404'
+
+          www_headers="$(curl --silent --show-error --head --max-time 30 \
+            'https://www.fabianroeben.com/')"
+          grep -Eq '^HTTP/[^ ]+ 301' <<< "$www_headers"
+          grep -Eiq '^location: https://fabianroeben\.com/' <<< "$www_headers"

@@ -1,1 +1,5 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.fabianroeben\.com$ [NC]
+RewriteRule ^ https://fabianroeben.com%{REQUEST_URI} [R=301,L,NE]
+
 ErrorDocument 404 /404.html

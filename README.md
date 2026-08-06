@@ -43,7 +43,19 @@ Visual styles and theme tokens are defined in `app/globals.css` using Tailwind C
 
 ## Deployment
 
-Deploy the generated `out/` directory to any static hosting provider. The canonical production URL is configured in `data/siteConfig.ts` and is also used for metadata, `robots.txt`, and the sitemap.
+Pushes to `main` are validated and deployed automatically to Hetzner through the `Deploy to Hetzner via FTPS` GitHub Actions workflow. The same workflow can be started manually from the repository's Actions page if an automatic run is not created.
+
+The workflow installs dependencies with `npm ci`, runs lint and the production build, validates the static export, synchronizes `out/` over FTPS, and checks the public site after upload. Deployments are serialized so concurrent pushes cannot overlap.
+
+The repository requires these GitHub Actions secrets:
+
+- `FTP_HOST`
+- `FTP_USERNAME`
+- `FTP_PASSWORD`
+- `FTP_PORT`
+- `FTP_PATH`
+
+The canonical production URL is configured in `data/siteConfig.ts` and is also used for metadata, `robots.txt`, and the sitemap. Requests to `www.fabianroeben.com` are redirected permanently to `fabianroeben.com` by the exported `.htaccess` file.
 
 ## License
 
