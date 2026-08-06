@@ -44,14 +44,6 @@ export function Header() {
               >
                 Research
               </Link>
-              {/* TODO: Uncomment when Software section is ready
-              <Link
-                href="/software"
-                className="hidden md:block text-muted-foreground hover:text-accent-red duration-300 dark:duration-0"
-              >
-                Software
-              </Link>
-              */}
               <CustomLink href={siteConfig.cv}>CV</CustomLink>
               <ThemeToggle />
             </div>

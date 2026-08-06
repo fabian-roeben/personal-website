@@ -1,7 +1,10 @@
 "use client";
 import { useState } from "react";
-import { mainSections } from "@/data/mainSections";
 import { papers } from "@/data/papers";
+import { About } from "./SectionsMain/About";
+import { Education } from "./SectionsMain/Education";
+import { Research } from "./SectionsMain/Research";
+import { Teaching } from "./SectionsMain/Teaching";
 
 export function MainContent() {
   const jobMarketPaper = papers.find(
@@ -15,20 +18,13 @@ export function MainContent() {
 
   return (
     <div className="space-y-8 mt-6 md:mt-0">
-      {mainSections.map((section) => {
-        if (section.id === "research") {
-          const Component = section.component;
-          return (
-            <Component
-              key={section.id}
-              openAbstractTitle={openAbstractTitle}
-              toggleAbstract={toggleAbstract}
-            />
-          );
-        }
-        const Component = section.component;
-        return <Component key={section.id} />;
-      })}
+      <About />
+      <Education />
+      <Research
+        openAbstractTitle={openAbstractTitle}
+        toggleAbstract={toggleAbstract}
+      />
+      <Teaching />
     </div>
   );
 }

@@ -1,6 +1,4 @@
-import type { SiteConfig } from "@/types/siteConfig";
-
-export const siteConfig: SiteConfig = {
+export const siteConfig = {
   name: "Fabian Roeben",
   url: "https://fabianroeben.com",
   description:
