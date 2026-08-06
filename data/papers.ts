@@ -28,7 +28,7 @@ export const papers: Paper[] = [
       { name: "Mobile App", url: "https://www.news-shift.com/" },
     ],
     media: [
-      { name: "FAZ", url: "https://fazarchiv.faz.net/faz-portal/document?uid=FAZ__FD02025120150103336566028" },
+      { name: "FAZ", url: "https://fazarchiv.faz.net/document?id=FAZ__b0a89b2dd2a2a76318943c4deef4058a85cff298" },
     ]
   },
   {
