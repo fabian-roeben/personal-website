@@ -1,8 +1,9 @@
 export const siteConfig = {
   name: "Fabian Roeben",
+  seoTitle: "Fabian Roeben | Economist — AI & Behavioral Economics",
   url: "https://fabianroeben.com",
   description:
-    "PhD Candidate in Economics at the University of Cologne",
+    "Economist studying how AI shapes information, expectations, and organizations. PhD candidate at the University of Cologne; incoming postdoc at ETH Zurich.",
   keywords: [
     "AI in Economics",
     "Machine Learning Economics",

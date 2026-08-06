@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { papers } from "@/data/papers";
 import { SectionHeader } from "../../ui/section-header";
 import { CustomLink } from "../../ui/link";
@@ -129,19 +129,21 @@ function ResearchItem({ paper, isOpen, onToggle }: ResearchItemProps) {
         </p>
       )}
 
-      <AnimatePresence>
-        {isOpen && paper.abstract && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="mt-2 overflow-hidden text-muted-foreground bg-background/30 backdrop-blur-[1px] text-left md:text-justify"
-          >
-            {paper.abstract}
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {paper.abstract && (
+        <motion.div
+          initial={false}
+          animate={{
+            height: isOpen ? "auto" : 0,
+            opacity: isOpen ? 1 : 0,
+            marginTop: isOpen ? 8 : 0,
+          }}
+          transition={{ duration: 0.3 }}
+          aria-hidden={!isOpen}
+          className="overflow-hidden text-muted-foreground bg-background/30 backdrop-blur-[1px] text-left md:text-justify"
+        >
+          {paper.abstract}
+        </motion.div>
+      )}
     </li>
   );
 }

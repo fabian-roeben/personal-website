@@ -22,7 +22,7 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
+    default: siteConfig.seoTitle,
     template: "%s",
   },
   description: siteConfig.description,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     icon: "/android-chrome-192x192.png",
   },
   openGraph: {
-    title: siteConfig.name,
+    title: siteConfig.seoTitle,
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
@@ -47,8 +47,22 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${siteConfig.url}${siteConfig.profileImage.src}`,
-        width: 1200,
-        height: 1200,
+        width: 2475,
+        height: 2475,
+        alt: siteConfig.profileImage.alt,
+        type: "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.seoTitle,
+    description: siteConfig.description,
+    images: [
+      {
+        url: `${siteConfig.url}${siteConfig.profileImage.src}`,
+        width: 2475,
+        height: 2475,
         alt: siteConfig.profileImage.alt,
       },
     ],
