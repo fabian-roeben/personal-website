@@ -13,7 +13,7 @@ export const siteConfig = {
     "AI Research",
     "Behavioral Machine Learning"
   ],
-  jobTitle: "Postdoctorla Researcher in Economics & AI",
+  jobTitle: "Postdoc in Economics & AI",
   location: "ETH Zurich",
   locationLink: "https://lawecon.ethz.ch/",
   email: "fabian.roeben@web.de",
