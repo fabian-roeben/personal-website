@@ -99,6 +99,17 @@
 
 
 @layer utilities {
+  .skip-link {
+    @apply fixed left-4 z-[200] rounded-md bg-card px-4 py-3 text-foreground shadow-lg transition-transform duration-200;
+    top: calc(env(safe-area-inset-top, 0px) + 1rem);
+    transform: translateY(calc(-100% - 2rem - env(safe-area-inset-top, 0px)));
+  }
+
+  .skip-link:focus,
+  .skip-link:focus-visible {
+    transform: translateY(0);
+  }
+
   .header-hidden {
     /* 
      * Hide navbar above the Dynamic Island:
@@ -106,6 +117,10 @@
      * - translateY moves up by: full height + safe area inset
      */
     transform: translateX(-50%) translateY(calc(-100% - env(safe-area-inset-top, 0px))) !important;
+  }
+
+  .header-hidden:focus-within {
+    transform: translateX(-50%) translateY(calc(env(safe-area-inset-top, 0px) + 1rem)) !important;
   }
 }
 
@@ -186,6 +201,16 @@
     pointer-events: auto;
   }
 
+  a,
+  button {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: hsl(var(--accent-red) / 0.18);
+  }
+
+  section[id] {
+    scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 7rem);
+  }
+
   h1 {
     @apply font-sans text-2xl font-light tracking-tight;
     letter-spacing: 0.14em;
@@ -235,6 +260,22 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-slide-left,
+  .animate-slide-right,
+  .animate-slide-up {
+    animation: none;
+  }
+
+  .skip-link {
+    transition: none;
+  }
 }
 
 /* WebKit (Chrome, Edge, Safari) */

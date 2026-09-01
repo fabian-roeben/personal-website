@@ -13,9 +13,12 @@ export function Header() {
     // Only scroll to top if already on home page, otherwise navigate normally
     if (window.location.pathname === "/") {
       e.preventDefault();
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
       window.scrollTo({
         top: 0,
-        behavior: "smooth",
+        behavior: prefersReducedMotion ? "auto" : "smooth",
       });
       window.history.replaceState(null, "", "/");
     }
@@ -25,7 +28,7 @@ export function Header() {
     <div className="h-24 pt-[env(safe-area-inset-top,0px)]">
       <header
         ref={headerRef}
-        className="fixed top-0 w-[calc(100%-2rem)] max-w-(--breakpoint-xl) left-1/2 bg-white/80 dark:bg-gray-800/25 backdrop-blur-md shadow-lg dark:shadow-gray-950/80 rounded-lg z-100 transition-transform duration-700 ease-in-out"
+        className="fixed top-0 w-[calc(100%-2rem)] max-w-(--breakpoint-xl) left-1/2 bg-white/80 dark:bg-gray-800/25 backdrop-blur-md shadow-lg dark:shadow-gray-950/80 rounded-lg z-100 transition-transform duration-700 ease-in-out motion-reduce:transition-none"
         style={{ transform: 'translateX(-50%) translateY(calc(env(safe-area-inset-top, 0px) + 1rem))' }}
       >
         <nav className="container px-4 py-4 max-w-(--breakpoint-xl)">

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useId } from "react";
 import { papers } from "@/data/papers";
 import { SectionHeader } from "../../ui/section-header";
 import { CustomLink } from "../../ui/link";
@@ -61,6 +62,8 @@ function AuthorList({ authors }: { authors: Author[] }) {
 }
 
 function ResearchItem({ paper, isOpen, onToggle }: ResearchItemProps) {
+  const abstractId = useId();
+
   return (
     <li>
       <h4 className="text-muted-foreground backdrop-blur-[1px]">
@@ -96,10 +99,11 @@ function ResearchItem({ paper, isOpen, onToggle }: ResearchItemProps) {
             type="button"
             onClick={onToggle}
             aria-expanded={isOpen}
+            aria-controls={abstractId}
             whileTap={{ scale: 0.95 }}
             className="text-left whitespace-nowrap cursor-pointer"
           >
-            <span className="text-accent-red hover:text-accent-red-foreground transition-all duration-300 backdrop-blur-[1px]">
+            <span className="text-accent-red hover:text-accent-red-foreground transition-colors duration-300 backdrop-blur-[1px]">
               {isOpen ? "[Abstract -]" : "[Abstract +]"}
             </span>
           </motion.button>
@@ -108,7 +112,7 @@ function ResearchItem({ paper, isOpen, onToggle }: ResearchItemProps) {
           <CustomLink
             key={link.url}
             href={link.url}
-            className="text-accent-red hover:text-accent-red-foreground transition-all duration-300 backdrop-blur-[1px] whitespace-nowrap"
+            className="text-accent-red hover:text-accent-red-foreground transition-colors duration-300 backdrop-blur-[1px] whitespace-nowrap"
           >
             [{link.name}]
           </CustomLink>
@@ -131,6 +135,9 @@ function ResearchItem({ paper, isOpen, onToggle }: ResearchItemProps) {
 
       {paper.abstract && (
         <motion.div
+          id={abstractId}
+          role="region"
+          aria-label={`Abstract for ${paper.title}`}
           initial={false}
           animate={{
             height: isOpen ? "auto" : 0,

@@ -20,9 +20,10 @@ export function ThemeToggle() {
 
   return (
     <button
+      type="button"
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-      className="flex items-center text-muted-foreground cursor-pointer"
-      aria-label="Toggle theme"
+      className="inline-flex size-11 items-center justify-center rounded-sm text-muted-foreground transition-colors duration-200 hover:text-accent-red motion-reduce:transition-none cursor-pointer"
+      aria-label={`Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} theme`}
     >
       <AnimatePresence mode="wait" initial={false}>
         {resolvedTheme === 'dark' ? (
@@ -33,7 +34,7 @@ export function ThemeToggle() {
             exit={{ opacity: 0, rotate: 90 }}
             transition={{ duration: 0.3 }}
           >
-            <Sun className="h-4 w-4" />
+            <Sun aria-hidden="true" className="h-5 w-5" />
           </motion.div>
         ) : (
           <motion.div
@@ -43,7 +44,7 @@ export function ThemeToggle() {
             exit={{ opacity: 0, rotate: -90 }}
             transition={{ duration: 0.3 }}
           >
-            <Moon className="h-4 w-4" />
+            <Moon aria-hidden="true" className="h-5 w-5" />
           </motion.div>
         )}
       </AnimatePresence>

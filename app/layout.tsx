@@ -84,10 +84,15 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${sourceSerif.variable}`}>
       <body>
         <Providers>
+          <a className="skip-link" href="#main-content">
+            Skip to main content
+          </a>
           <WaveBackground />
           <div className="flex flex-col min-h-screen px-4">
             <Header />
-            <main className="flex-1">{children}</main>
+            <main id="main-content" tabIndex={-1} className="flex-1">
+              {children}
+            </main>
             <Footer />
           </div>
         </Providers>

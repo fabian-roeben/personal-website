@@ -18,7 +18,7 @@ export const papers: Paper[] = [
     authors: [
       { name: "Felix Chopra", website: "https://www.felixchopra.com/" },
       { name: "Ingar Haaland", website: "https://sites.google.com/site/ingarhaaland/" },
-      { name: "Chris Roth", website: "https://sites.google.com/site/chrisrotheconomics" },
+      { name: "Chris Roth", website: "https://cproth.com/" },
       { name: "Vanessa Sticher", website: "https://vanessasticher.github.io/"},
     ],
     titleLink: "/papers/TMT.pdf",
@@ -50,7 +50,7 @@ export const papers: Paper[] = [
     authors: [
       { name: "Elliott Ash", website: "https://elliottash.com/" },
       { name: "Marine Casalis", website: "https://pp.ethz.ch/people/marine-casalis.html"},
-      { name: "Gloria Gennaro", website: "https://gloriagennaro.rbind.io/"},
+      { name: "Gloria Gennaro", website: "http://gloriagennaro.rbind.io/"},
       { name: "Dominik Hangartner", website: "https://pp.ethz.ch/people/dominik-hangartner.html"},
       { name: "Michael Jacobs", website: "https://pp.ethz.ch/people/michael-jacobs.html" },
     ],

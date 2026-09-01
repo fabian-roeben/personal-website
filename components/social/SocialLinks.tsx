@@ -13,7 +13,7 @@ export function SocialLinks({ className }: SocialLinksProps) {
     <div className={cn("flex flex-col gap-3", className)}>
       {/* Location */}
       <div className="flex items-center gap-3">
-        <MapPin size={20} strokeWidth={1.5} />
+        <MapPin aria-hidden="true" size={20} strokeWidth={1.5} />
         <CustomLink href={siteConfig.locationLink}>
           {siteConfig.location}
         </CustomLink>
@@ -21,7 +21,7 @@ export function SocialLinks({ className }: SocialLinksProps) {
 
       {/* Email link */}
       <div className="flex items-center gap-3">
-        <Mail size={20} strokeWidth={1.5} />
+        <Mail aria-hidden="true" size={20} strokeWidth={1.5} />
         <CustomLink
           href={`mailto:${siteConfig.email}`}
           aria-label={`Email ${siteConfig.name}`}
@@ -34,7 +34,7 @@ export function SocialLinks({ className }: SocialLinksProps) {
       <div className="flex items-center justify-start gap-4">
         {/* CV link */}
         <div className="flex items-center gap-3">
-          <FileText size={20} strokeWidth={1.5} />
+          <FileText aria-hidden="true" size={20} strokeWidth={1.5} />
           <CustomLink href={siteConfig.cv}>CV</CustomLink>
         </div>
 
@@ -47,29 +47,33 @@ export function SocialLinks({ className }: SocialLinksProps) {
             href={siteConfig.socials.github}
             aria-label="GitHub Profile"
             title="GitHub"
+            className="inline-flex size-11 items-center justify-center rounded-sm"
           >
-            <Github size={20} strokeWidth={1.5} />
+            <Github aria-hidden="true" size={20} strokeWidth={1.5} />
           </CustomLink>
           <CustomLink
             href={siteConfig.socials.linkedin}
             aria-label="LinkedIn Profile"
             title="LinkedIn"
+            className="inline-flex size-11 items-center justify-center rounded-sm"
           >
-            <Linkedin size={20} strokeWidth={1.5} />
+            <Linkedin aria-hidden="true" size={20} strokeWidth={1.5} />
           </CustomLink>
           <CustomLink
             href={siteConfig.socials.twitter}
             aria-label="X Profile"
             title="X (formerly Twitter)"
+            className="inline-flex size-11 items-center justify-center rounded-sm"
           >
-            <FaXTwitter size={20} strokeWidth={1.5} />
+            <FaXTwitter aria-hidden="true" size={20} strokeWidth={1.5} />
           </CustomLink>
           <CustomLink
             href={siteConfig.socials.googleScholar}
             aria-label="Google Scholar Profile"
             title="Google Scholar"
+            className="inline-flex size-11 items-center justify-center rounded-sm"
           >
-            <GraduationCap size={24} strokeWidth={1.5} />
+            <GraduationCap aria-hidden="true" size={24} strokeWidth={1.5} />
           </CustomLink>
         </div>
       </div>

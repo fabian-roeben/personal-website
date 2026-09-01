@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Fabian Roeben",
-  seoTitle: "Fabian Roeben | Economist — AI & Behavioral Economics",
+  seoTitle: "Fabian Roeben | Economist",
   url: "https://fabianroeben.com",
   description:
-    "Economist studying how AI shapes information, expectations, and organizations. PhD candidate at the University of Cologne; incoming postdoc at ETH Zurich.",
+    "Economist studying how AI shapes information, expectations, and organizations. Postdoctoral researcher in economics and AI at the Center for Law & Economics at ETH Zurich.",
   keywords: [
     "AI in Economics",
     "Machine Learning Economics",
@@ -13,10 +13,10 @@ export const siteConfig = {
     "AI Research",
     "Behavioral Machine Learning"
   ],
-  jobTitle: "PhD Candidate in Economics",
-  location: "University of Cologne",
-  locationLink: "https://wiso.uni-koeln.de/en/",
-  email: "f.roeben@wiso.uni-koeln.de",
+  jobTitle: "Postdoctorla Researcher in Economics & AI",
+  location: "ETH Zurich",
+  locationLink: "https://lawecon.ethz.ch/",
+  email: "fabian.roeben@web.de",
   cv: "/cv_roeben.pdf",
   socials: {
     github: "https://github.com/fabian-roeben",

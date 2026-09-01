@@ -1,5 +1,5 @@
 const aboutContent = `
-I am a PhD Candidate in Economics at the [University of Cologne](https://wiso.uni-koeln.de/en/) working at the intersection of applied AI and behavioral economics. Two specific themes in my work are (i) building software, such as mobile apps, as platforms for large-scale RCTs to understand the impacts of AI and (ii) using advances in AI for measurement to find low-dimensional representations of the world from high-dimensional data.
+I am a Postdoctoral Researcher in Economics & AI at [ETH Zurich](https://lawecon.ethz.ch/) working at the intersection of applied AI and behavioral economics. Two specific themes in my work are (i) building software, such as mobile apps, as platforms for large-scale RCTs to understand the impacts of AI and (ii) using advances in AI for measurement to find low-dimensional representations of the world from high-dimensional data.
 `;
 
 const affiliationsContent = [
