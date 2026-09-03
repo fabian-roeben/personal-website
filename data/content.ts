@@ -15,6 +15,10 @@ const affiliationsContent = [
     name: "Gateway Cologne",
     url: "https://gateway-unikoeln.de/en/",
   },
+  {
+    name: "Immigration Policy Lab",
+    url: "https://immigrationlab.org/",
+  },
 ];
 
 const educationContent = [

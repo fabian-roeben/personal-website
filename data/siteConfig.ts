@@ -16,7 +16,7 @@ export const siteConfig = {
   jobTitle: "Postdoc in Economics & AI",
   location: "ETH Zurich",
   locationLink: "https://lawecon.ethz.ch/",
-  email: "fabian.roeben@web.de",
+  email: "fabian.roeben@gess.ethz.ch",
   cv: "/cv_roeben.pdf",
   socials: {
     github: "https://github.com/fabian-roeben",
