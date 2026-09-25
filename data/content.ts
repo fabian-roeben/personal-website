@@ -1,5 +1,5 @@
 const aboutContent = `
-I am a Postdoctoral Researcher at [ETH Zurich](https://lawecon.ethz.ch/) working at the intersection of applied AI and behavioral economics. Two specific themes in my work are (i) building software, such as mobile apps, as platforms for large-scale RCTs to understand the impacts of AI and (ii) using advances in AI for measurement to find low-dimensional representations of the world from high-dimensional data.
+I am a Postdoctoral Researcher at [ETH Zurich](https://lawecon.ethz.ch/) working at the intersection of AI and Economics. Two specific themes in my work are (i) building software, such as mobile apps, as platforms for large-scale RCTs to understand the impacts of AI and (ii) using advances in AI for measurement in causal inference.
 `;
 
 const affiliationsContent = [
@@ -48,6 +48,24 @@ const educationContent = [
   },
 ];
 
+const resourcesContent = [
+  {
+    id: "zurich-summer-school-2026",
+    description:
+      "I helped organize the [Zurich Summer School in AI & Applied Economics](https://zrh-ai-econ.com/) and taught two lectures on using AI in research:",
+    lectures: [
+      {
+        title: "Working with AI Agents",
+        slides: "/resources/working-with-ai-agents.pdf",
+      },
+      {
+        title: "Building Research Software with AI",
+        slides: "/resources/building-research-software-with-ai.pdf",
+      },
+    ],
+  },
+];
+
 const teachingContent = [
   "Experimental Methods (graduate)",
   "Survey Design (graduate)",
@@ -57,6 +75,7 @@ const teachingContent = [
 export const mainContentData = {
   about: aboutContent,
   education: educationContent,
+  resources: resourcesContent,
   teaching: teachingContent,
   affiliations: affiliationsContent,
 };

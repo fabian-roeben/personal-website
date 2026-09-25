@@ -4,6 +4,7 @@ import { papers } from "@/data/papers";
 import { About } from "./SectionsMain/About";
 import { Education } from "./SectionsMain/Education";
 import { Research } from "./SectionsMain/Research";
+import { Resources } from "./SectionsMain/Resources";
 import { Teaching } from "./SectionsMain/Teaching";
 
 export function MainContent() {
@@ -24,6 +25,7 @@ export function MainContent() {
         openAbstractTitle={openAbstractTitle}
         toggleAbstract={toggleAbstract}
       />
+      <Resources />
       <Teaching />
     </div>
   );
